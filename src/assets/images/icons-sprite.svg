@@ -60,8 +60,8 @@
         </defs>
     </g>
     <g id="double-square">
-        <rect x="0.5" y="0.5" width="9" height="9" stroke="currentColor"/>
-        <rect x="5.5" y="5.5" width="9" height="9" stroke="currentColor"/>
+        <rect x="0.5" y="0.5" width="9" height="9" stroke="#FFB400"/>
+        <rect x="5.5" y="5.5" width="9" height="9" stroke="#FFB400"/>
     </g>
     <g id="check">
         <g clip-path="url(#clip0_1_418)">
@@ -269,5 +269,15 @@
     </g>
     <g id="arrow-attention">
         <path d="M17.07 16.363L11.414 22.021L10 20.606L15.657 14.95L10.707 10H22.02V21.313L17.07 16.363Z" fill="white"/>
+    </g>
+    <g id="arrow-follow">
+        <g clip-path="url(#clip0_1_1623)">
+            <path d="M10.7814 7.33312L7.20535 3.75712L8.14802 2.81445L13.3334 7.99979L8.14802 13.1851L7.20535 12.2425L10.7814 8.66645H2.66669V7.33312H10.7814Z" fill="#18191A"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_1_1623">
+                <rect width="16" height="16" fill="white"/>
+            </clipPath>
+        </defs>
     </g>
 </svg>

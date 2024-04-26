@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import { Icon } from "../../components/icon/Icon";
 import { Navigation } from "../../components/navigation/Navigation";
+import { Icon } from "../../components/icon/Icon";
+import { LinkIcon } from "../../components/link-icon/LinkIcon";
 
 interface INavigationProps {}
 
 export const Menu = ({}: INavigationProps) => {
   return (
     <StyledMenu>
-      <Icon
-        width="30"
-        height="30"
+      <LinkIcon
+        width="30px"
+        height="30px"
         viewBox="0 0 30 30"
         iconId="moon-theme-icon"
       />
@@ -29,10 +30,11 @@ export const StyledMenu = styled.aside`
   height: 100vh;
 
   a {
-    flex-grow: 1;
+    //flex-grow: 1;
+    color: #767676;
   }
-
-  nav {
-    flex-grow: 3;
-  }
+  //
+  //nav {
+  //  flex-grow: 3;
+  //}
 `;

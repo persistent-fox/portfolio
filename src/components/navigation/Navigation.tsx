@@ -1,5 +1,6 @@
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
+import { LinkIcon } from "../link-icon/LinkIcon";
 
 interface INavigationProps {}
 
@@ -9,12 +10,17 @@ export const Navigation = ({}: INavigationProps) => {
       <ul>
         <li>
           <a href="#">
-            <Icon width="18" height="18" viewBox="0 0 18 18" iconId="home" />
+            <LinkIcon
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              iconId="home"
+            />
           </a>
         </li>
         <li>
           <a href="#">
-            <Icon
+            <LinkIcon
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -24,7 +30,7 @@ export const Navigation = ({}: INavigationProps) => {
         </li>
         <li>
           <a href="#">
-            <Icon
+            <LinkIcon
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -34,7 +40,7 @@ export const Navigation = ({}: INavigationProps) => {
         </li>
         <li>
           <a href="#">
-            <Icon
+            <LinkIcon
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -44,12 +50,22 @@ export const Navigation = ({}: INavigationProps) => {
         </li>
         <li>
           <a href="#">
-            <Icon width="18" height="18" viewBox="0 0 18 18" iconId="blog" />
+            <LinkIcon
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              iconId="blog"
+            />
           </a>
         </li>
         <li>
           <a href="#">
-            <Icon width="18" height="18" viewBox="0 0 18 18" iconId="contact" />
+            <LinkIcon
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              iconId="contact"
+            />
           </a>
         </li>
       </ul>
