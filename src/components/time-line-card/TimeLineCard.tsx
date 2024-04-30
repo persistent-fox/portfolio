@@ -1,9 +1,84 @@
-interface ITimeLineCardProps {}
+import { TitleSection } from "../title-section/TitleSection";
+import { Paragraph } from "../paragraph/Paragraph";
+import styled from "styled-components";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
-export const TimeLineCard = ({}: ITimeLineCardProps) => {
+interface ITimeLineCardProps {
+  date: string;
+  placeName: string;
+  description: string;
+  jobTitle: string;
+  title: string;
+}
+
+export const TimeLineCard = ({
+  date,
+  description,
+  placeName,
+  jobTitle,
+  title,
+}: ITimeLineCardProps) => {
   return (
-    <div>
-      <div>TimeLineCard</div>
-    </div>
+    <StyledTimeLineCard>
+      <div className="wrapper">
+        <TitleSection fontSize={"18px"}>{placeName}</TitleSection>
+        <Place>
+          <span className="job-title">{jobTitle}</span>
+          <span className="date">{date}</span>
+        </Place>
+      </div>
+      <div className="description">
+        <TitleSection fontSize={"18px"} fontWeight={"500"} as={"h3"}>
+          {title}
+        </TitleSection>
+        <Paragraph>{description}</Paragraph>
+      </div>
+    </StyledTimeLineCard>
   );
 };
+
+export const StyledTimeLineCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .wrapper {
+    flex: 1;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 2;
+  }
+`;
+
+export const Place = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+  .job-title {
+    color: ${ThemeStyled.colors.text.tertiary};
+    font-kerning: none;
+    font-feature-settings: "calt" off;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: capitalize;
+  }
+
+  .date {
+    color: ${ThemeStyled.colors.tertiary};
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 100.9%;
+    padding: 4px 8px;
+    border-radius: 1px;
+    background-image: linear-gradient(
+      to right,
+      ${ThemeStyled.colors.secondary},
+      ${ThemeStyled.colors.accent}
+    );
+  }
+`;

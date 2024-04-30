@@ -1,73 +1,19 @@
-import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { LinkIcon } from "../link-icon/LinkIcon";
+import { NavIcon } from "../nav-icon/NavIcon";
 
-interface INavigationProps {}
+interface INavigationProps {
+  menuItems: string[];
+}
 
-export const Navigation = ({}: INavigationProps) => {
+export const Navigation = ({ menuItems }: INavigationProps) => {
   return (
     <StyledMenu>
       <ul>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="home"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="file-code"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="user-icon"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="portfolio"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="blog"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <LinkIcon
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              iconId="contact"
-            />
-          </a>
-        </li>
+        {menuItems.map((item) => (
+          <li key={item}>
+            <NavIcon width="18" height="18" viewBox="0 0 18 18" iconId={item} />
+          </li>
+        ))}
       </ul>
     </StyledMenu>
   );

@@ -1,46 +1,45 @@
 import { TitleSection } from "../../../components/title-section/TitleSection";
 import { Paragraph } from "../../../components/paragraph/Paragraph";
-import styled from "styled-components";
+import { workHistory } from "../../../mock/data";
 import { TimeLineCard } from "../../../components/time-line-card/TimeLineCard";
 import { Divider } from "../../../components/devider/Divider";
-import { education } from "../../../mock/data";
+import styled from "styled-components";
 import { Fragment } from "react";
 import { ThemeStyled } from "../../../styles/Theme.styled";
 
-interface IEducationProps {}
+interface IWorkHistoryProps {}
 
-export const Education = ({}: IEducationProps) => {
+export const WorkHistory = ({}: IWorkHistoryProps) => {
   return (
-    <StyledEducation>
-      <TitleSection>Education</TitleSection>
+    <StyledWorkHistory>
+      <TitleSection>Work History</TitleSection>
       <Paragraph textAlign={"center"} maxWidth={"438px"}>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
-      <Info>
-        {education.map((item) => (
+      <div className="info">
+        {workHistory.map((item) => (
           <Fragment key={item.key}>
             <TimeLineCard {...item} />
             <Divider />
           </Fragment>
         ))}
-      </Info>
-    </StyledEducation>
+      </div>
+    </StyledWorkHistory>
   );
 };
 
-export const StyledEducation = styled.section`
+export const StyledWorkHistory = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
   padding: 35px 0;
-`;
-
-export const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 40px 30px;
-  background-color: ${ThemeStyled.colors.primary};
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 30px;
+    background-color: ${ThemeStyled.colors.primary};
+  }
 `;

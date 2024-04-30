@@ -1,5 +1,6 @@
 import exp from "constants";
 import styled from "styled-components";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
 interface IUserIconProps {
   srcImg: string;
@@ -18,11 +19,21 @@ export const StyledUserIcon = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #f0f0f6;
-  overflow: hidden;
+  background: ${ThemeStyled.colors.grey.medium};
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #7eb942;
+  }
   img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
   }
 `;

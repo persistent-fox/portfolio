@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import React from "react";
 import { Icon } from "../icon/Icon";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
 interface IButtonProps {
   primary?: boolean;
@@ -10,6 +11,7 @@ interface IButtonProps {
   viewBox?: string;
   iconId?: string;
   color?: string;
+  fontWeight?: string;
 }
 
 export const Button = ({
@@ -20,9 +22,10 @@ export const Button = ({
   viewBox,
   iconId,
   color,
+  fontWeight,
 }: IButtonProps) => {
   return (
-    <StyledButton color={color} primary={primary}>
+    <StyledButton fontWeight={fontWeight} color={color} primary={primary}>
       {children}
       {iconId && (
         <Icon width={width} height={height} viewBox={viewBox} iconId={iconId} />
@@ -35,6 +38,7 @@ type StyledButtonProps = {
   primary?: boolean;
   fontSize?: string;
   color?: string;
+  fontWeight?: string;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -46,18 +50,27 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 600;
   line-height: normal;
   padding: 10px 30px;
-  color: ${(props) => props.color || "#2B2B2B"};
-  background: #ffb400;
+  color: ${(props) => props.color || ThemeStyled.colors.tertiary};
+  background-image: linear-gradient(
+    to right,
+    ${ThemeStyled.colors.secondary},
+    ${ThemeStyled.colors.accent}
+  );
   border: none;
   cursor: pointer;
+  transition: 0.3s;
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   // primary button
   ${(props) =>
     props.primary &&
     css<StyledButtonProps>`
-      color: ${(props) => props.color || "#2b2b2b"};
+      color: ${(props) => props.color || ThemeStyled.colors.tertiary};
       font-size: ${(props) => props.fontSize || "16px"};
-      font-weight: 500;
+      font-weight: ${(props) => props.fontWeight || "500"};
       padding: 16px 32px;
       border-radius: 5px;
       text-transform: uppercase;

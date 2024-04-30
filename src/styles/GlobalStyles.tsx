@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeStyled } from "./Theme.styled";
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -13,8 +14,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    cursor: pointer;
   }
   body {
-    background-color: #F0F0F6;
+    background-color: ${ThemeStyled.colors.grey.medium};
   }
 `;

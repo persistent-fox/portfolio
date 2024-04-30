@@ -1,14 +1,9 @@
 import styled from "styled-components";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
-interface IDividerProps {}
-
-export const Divider = ({}: IDividerProps) => {
-  return <StyledDivider></StyledDivider>;
-};
-
-export const StyledDivider = styled.span`
+export const Divider = styled.span`
   display: block;
-  background: #f0f0f6;
+  background: ${ThemeStyled.colors.grey.medium};
   height: 1.5px;
   width: 100%;
 `;

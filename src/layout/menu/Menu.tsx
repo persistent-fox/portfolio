@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import { Navigation } from "../../components/navigation/Navigation";
-import { Icon } from "../../components/icon/Icon";
-import { LinkIcon } from "../../components/link-icon/LinkIcon";
+import { NavIcon } from "../../components/nav-icon/NavIcon";
+import { menuItems } from "../../mock/data";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
-interface INavigationProps {}
+interface INavigationProps {
+  menuItems: string[];
+}
 
-export const Menu = ({}: INavigationProps) => {
+export const Menu = ({ menuItems }: INavigationProps) => {
   return (
     <StyledMenu>
-      <LinkIcon
+      <NavIcon
         width="30px"
         height="30px"
         viewBox="0 0 30 30"
         iconId="moon-theme-icon"
       />
-      <Navigation />
+      <Navigation menuItems={menuItems} />
     </StyledMenu>
   );
 };
@@ -24,17 +27,12 @@ export const StyledMenu = styled.aside`
   flex-direction: column;
   align-items: center;
   padding: 50px 10px;
-  background: #fafafa;
+  background: ${ThemeStyled.colors.grey.light};
   box-shadow: 4px 0 10px 0 rgba(47, 122, 249, 0.1);
   max-width: 108px;
-  height: 100vh;
+  min-height: 100vh;
 
   a {
-    //flex-grow: 1;
-    color: #767676;
+    color: ${ThemeStyled.colors.text.dark};
   }
-  //
-  //nav {
-  //  flex-grow: 3;
-  //}
 `;

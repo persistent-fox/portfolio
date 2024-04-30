@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
+import { ThemeStyled } from "../../styles/Theme.styled";
 
 interface IListProps {
   listItems: string[];
@@ -27,7 +28,7 @@ export const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  color: #767676;
+  color: ${ThemeStyled.colors.text.dark};
   font-kerning: none;
   font-feature-settings: "calt" off;
   font-size: 15px;
