@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Navigation } from "../../components/navigation/Navigation";
-import { NavIcon } from "../../components/nav-icon/NavIcon";
-import { menuItems } from "../../mock/data";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { Navigation } from "../../../components/navigation/Navigation";
+import { NavIcon } from "../../../components/nav-icon/NavIcon";
+import { menuItems } from "../../../mock/data";
+import { ThemeStyled } from "../../../styles/Theme.styled";
 
 interface INavigationProps {
   menuItems: string[];

@@ -18,10 +18,10 @@ export const Education = ({}: IEducationProps) => {
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
       <Info>
-        {education.map((item) => (
+        {education.map((item, index) => (
           <Fragment key={item.key}>
             <TimeLineCard {...item} />
-            <Divider />
+            {index !== education.length - 1 && <Divider />}
           </Fragment>
         ))}
       </Info>
@@ -40,7 +40,7 @@ export const StyledEducation = styled.section`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   padding: 40px 30px;
   background-color: ${ThemeStyled.colors.primary};
 `;

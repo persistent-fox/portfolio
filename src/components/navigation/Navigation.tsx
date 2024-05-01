@@ -8,9 +8,9 @@ interface INavigationProps {
 export const Navigation = ({ menuItems }: INavigationProps) => {
   return (
     <StyledMenu>
-      <ul>
+      <ul role={"menu"}>
         {menuItems.map((item) => (
-          <li key={item}>
+          <li role={"menuitem"} key={item}>
             <NavIcon width="18" height="18" viewBox="0 0 18 18" iconId={item} />
           </li>
         ))}

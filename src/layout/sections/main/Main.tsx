@@ -10,12 +10,12 @@ interface IMainProps {}
 export const Main = ({}: IMainProps) => {
   return (
     <StyledMain>
-      <div>
+      <Information>
         <Name>I’m Rayan Adlrdard</Name>
-        <TitleSection fontSize="48px" as="h1">
+        <TitleSection mb={"18px"} fontSize="48px" as="h1">
           <Highlighted>Front-end</Highlighted> Developer
         </TitleSection>
-        <Paragraph>
+        <Paragraph mb={"25px"}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
           feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
           lectus.
@@ -29,7 +29,7 @@ export const Main = ({}: IMainProps) => {
         >
           Hire me
         </Button>
-      </div>
+      </Information>
       <img src={srcImg} alt="photo" />
     </StyledMain>
   );
@@ -37,13 +37,25 @@ export const Main = ({}: IMainProps) => {
 
 export const StyledMain = styled.section`
   position: relative;
+  min-height: 468px;
   background-color: ${ThemeStyled.colors.primary};
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 8px 58px 0 58px;
+  flex-wrap: wrap;
+  img {
+    height: 100%;
+  }
+`;
+
+export const Information = styled.div`
+  max-width: 500px;
+  width: 100%;
 `;
 
 export const Name = styled.span`
+  display: block;
   color: ${ThemeStyled.colors.text.tertiary};
   font-size: 48px;
   font-weight: 700;

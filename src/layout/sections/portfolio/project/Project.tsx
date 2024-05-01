@@ -43,6 +43,7 @@ export const Project = ({ srcImg }: IProjectProps) => {
 
 export const StyledProject = styled.article`
   width: 45%;
+  min-width: 340px;
   background-color: ${ThemeStyled.colors.primary};
   border-radius: 0 60px 0 60px;
   overflow: hidden;

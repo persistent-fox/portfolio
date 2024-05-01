@@ -14,12 +14,23 @@ export const MySkills = ({}: IMySkillsProps) => {
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
-      <FlexWrapper wrap={"wrap"} gap={"20px"}>
+      <FlexWrapper
+        align={"flex-start"}
+        justify={"space-between"}
+        wrap={"wrap"}
+        gap={"20px"}
+      >
         <Skill iconId={"html5"} />
         <Skill iconId={"css3"} />
         <Skill iconId={"react"} />
         <Skill iconId={"typescript"} />
         <Skill iconId={"styled-components"} />
+        <Skill
+          width={"92pt"}
+          height={"92px"}
+          viewBox={"0 0 92 92"}
+          iconId={"git"}
+        />
       </FlexWrapper>
     </StyledMySkills>
   );

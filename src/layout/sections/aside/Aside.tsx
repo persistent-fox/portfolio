@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Button } from "../../components/button/Button";
-import { Divider } from "../../components/devider/Divider";
-import { languages, skills, socials } from "../../mock/data";
+import { Button } from "../../../components/button/Button";
+import { Divider } from "../../../components/devider/Divider";
+import { languages, skills, socials } from "../../../mock/data";
 import { Skills } from "./skills/Skills";
 import { MainInfo } from "./main-info/MainInfo";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { ThemeStyled } from "../../../styles/Theme.styled";
 
 interface IAsideProps {}
 

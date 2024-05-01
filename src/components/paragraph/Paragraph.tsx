@@ -7,6 +7,7 @@ type ParagraphProps = {
   fontSize?: string;
   maxWidth?: string;
   textAlign?: string;
+  mb?: string;
 };
 
 export const Paragraph = styled.p<ParagraphProps>`
@@ -19,4 +20,5 @@ export const Paragraph = styled.p<ParagraphProps>`
   text-transform: capitalize;
   max-width: ${(props) => props.maxWidth || "none"};
   text-align: ${(props) => props.textAlign || "left"};
+  margin-bottom: ${(props) => props.mb || "0"};
 `;

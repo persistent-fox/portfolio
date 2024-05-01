@@ -42,4 +42,5 @@ export const StyledContactInfo = styled.section`
   display: flex;
   gap: 30px;
   padding: 35px 0;
+  flex-wrap: wrap;
 `;

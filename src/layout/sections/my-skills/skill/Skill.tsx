@@ -6,13 +6,16 @@ import { ThemeStyled } from "../../../../styles/Theme.styled";
 
 interface ISkillProps {
   iconId: string;
+  width?: string;
+  height?: string;
+  viewBox?: string;
 }
 
-export const Skill = ({ iconId }: ISkillProps) => {
+export const Skill = ({ iconId, width, height, viewBox }: ISkillProps) => {
   return (
     <StyledSkill>
       <Frame>
-        <Icon iconId={iconId} />
+        <Icon width={width} height={height} viewBox={viewBox} iconId={iconId} />
       </Frame>
       <TitleSection fontSize={"18px"} fontWeight={"600"} as={"h3"}>
         Skill

@@ -1,6 +1,6 @@
 import "./App.css";
-import { Menu } from "./layout/menu/Menu";
-import { Aside } from "./layout/aside/Aside";
+import { Menu } from "./layout/sections/menu/Menu";
+import { Aside } from "./layout/sections/aside/Aside";
 import { Main } from "./layout/sections/main/Main";
 import { Education } from "./layout/sections/education/Education";
 import { FlexWrapper } from "./components/FlexWrapper";
@@ -10,7 +10,7 @@ import { menuItems } from "./mock/data";
 import { Portfolio } from "./layout/sections/portfolio/Portfolio";
 import { ContactInfo } from "./layout/sections/contact-info/contactInfo";
 import { Footer } from "./layout/sections/footer/Footer";
-import { MySkills } from "./layout/sections/mySkills/MySkills";
+import { MySkills } from "./layout/sections/my-skills/MySkills";
 
 function App() {
   return (

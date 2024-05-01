@@ -36,6 +36,7 @@ export const StyledInfoCard = styled.article`
   padding: 25px;
   max-width: 370px;
   min-height: 210px;
+  min-width: 310px;
   font-size: 18px;
   font-weight: 500;
   line-height: 123.6%;

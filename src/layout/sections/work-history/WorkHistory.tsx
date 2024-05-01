@@ -18,10 +18,10 @@ export const WorkHistory = ({}: IWorkHistoryProps) => {
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
       <div className="info">
-        {workHistory.map((item) => (
+        {workHistory.map((item, index) => (
           <Fragment key={item.key}>
             <TimeLineCard {...item} />
-            <Divider />
+            {index !== workHistory.length - 1 && <Divider />}
           </Fragment>
         ))}
       </div>
@@ -38,7 +38,7 @@ export const StyledWorkHistory = styled.section`
   .info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     padding: 40px 30px;
     background-color: ${ThemeStyled.colors.primary};
   }

@@ -19,8 +19,6 @@ export const Portfolio = ({}: IPortfolioProps) => {
       <FlexWrapper justify={"center"} gap={"20px"} wrap={"wrap"}>
         <Project srcImg={srcImg} />
         <Project srcImg={srcImg} />
-        <Project srcImg={srcImg} />
-        <Project srcImg={srcImg} />
       </FlexWrapper>
       <FlexWrapper gap={"10px"} style={{ marginTop: "5px" }}>
         <Slide />

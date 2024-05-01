@@ -4,6 +4,7 @@ import { ThemeStyled } from "../../styles/Theme.styled";
 type StyledTitleSectionProps = {
   fontSize?: string;
   fontWeight?: string;
+  mb?: string;
 };
 
 export const TitleSection = styled.h2<StyledTitleSectionProps>`
@@ -12,4 +13,5 @@ export const TitleSection = styled.h2<StyledTitleSectionProps>`
   font-weight: ${(props) => props.fontSize || "700"};
   line-height: 120%;
   text-transform: capitalize;
+  margin-bottom: ${(props) => props.mb || "0"};
 `;
