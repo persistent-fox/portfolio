@@ -12,31 +12,27 @@ interface IProjectProps {
 export const Project = ({ srcImg }: IProjectProps) => {
   return (
     <StyledProject>
-      <figure>
-        <img src={srcImg} alt="project" />
-        <Info>
-          <figcaption>
-            <TitleSection fontWeight={"500"} fontSize={"18px"} as={"h3"}>
-              Project Tile goes here
-            </TitleSection>
-            <Paragraph>
-              This is sample project description random things are here in
-              description This is sample project lorem ipsum generator for dummy
-              content
-            </Paragraph>
-          </figcaption>
-          <FlexWrapper as={"ul"} wrap={"wrap"} gap={"10px"}>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            <li>SASS</li>
-            <li>React</li>
-          </FlexWrapper>
-          <FlexWrapper justify={"space-evenly"} gap={"50px"}>
-            <ProjectLink iconId={"clip"} titleLink={"Live Preview"} />
-            <ProjectLink iconId={"github"} titleLink={"View Code"} />
-          </FlexWrapper>
-        </Info>
-      </figure>
+      <img src={srcImg} alt="project" />
+      <Info>
+        <TitleSection fontWeight={"500"} fontSize={"18px"} as={"h3"}>
+          Project Tile goes here
+        </TitleSection>
+        <Paragraph>
+          This is sample project description random things are here in
+          description This is sample project lorem ipsum generator for dummy
+          content.
+        </Paragraph>
+        <FlexWrapper as={"ul"} wrap={"wrap"} gap={"10px"}>
+          <li>HTML</li>
+          <li>JavaScript</li>
+          <li>SASS</li>
+          <li>React</li>
+        </FlexWrapper>
+        <FlexWrapper justify={"space-evenly"} gap={"50px"}>
+          <ProjectLink iconId={"clip"} titleLink={"Live Preview"} />
+          <ProjectLink iconId={"github"} titleLink={"View Code"} />
+        </FlexWrapper>
+      </Info>
     </StyledProject>
   );
 };
@@ -46,11 +42,11 @@ export const StyledProject = styled.article`
   min-width: 340px;
   background-color: ${ThemeStyled.colors.primary};
   border-radius: 0 60px 0 60px;
-  overflow: hidden;
 
   img {
     width: 100%;
     height: 260px;
+    border-top-right-radius: 60px;
     object-fit: cover;
   }
 
@@ -70,5 +66,8 @@ export const StyledProject = styled.article`
 `;
 
 export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 25px;
 `;

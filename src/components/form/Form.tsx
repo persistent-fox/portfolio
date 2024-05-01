@@ -9,23 +9,31 @@ export const Form = ({}: IFormProps) => {
   return (
     <StyledForm>
       <TextField
+        inputId={"name"}
         placeholder={"Enter your name"}
         label={"Your Full Name"}
         required={true}
         type={"text"}
       />
       <TextField
+        inputId={"email"}
         placeholder={"Enter your email"}
         label={"Your Email"}
         required={true}
         type={"text"}
       />
       <TextField
+        inputId={"subject"}
         placeholder={"Enter your subject"}
         label={"Subject"}
         type={"text"}
       />
-      <TextField placeholder={"Message here"} label={"Your Message"} textarea />
+      <TextField
+        inputId={"massage"}
+        placeholder={"Message here"}
+        label={"Your Message"}
+        textarea
+      />
       <Button primary fontWeight={"600"}>
         send message
       </Button>

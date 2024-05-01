@@ -4,42 +4,44 @@ import { FlexWrapper } from "../FlexWrapper";
 import { ThemeStyled } from "../../styles/Theme.styled";
 
 interface IInputProps {
-  type?: "text" | "password";
+  type?: "text" | "password" | "email";
   label?: string;
   required?: boolean;
   textarea?: boolean;
   placeholder?: string;
+  inputId: string;
 }
 
 export const TextField = ({
   label,
+  inputId,
   type = "text",
   textarea = false,
   required = false,
   placeholder,
 }: IInputProps) => {
   return (
-    <StyledTextField>
+    <FlexWrapper direction={"column"} gap={"12px"}>
       <FlexWrapper gap={"10px"}>
-        <Text>{label}</Text>
-        {required && <Text>(Required)</Text>}
+        <Text htmlFor={inputId}>
+          {label}
+          {required && " (Required)"}
+        </Text>
       </FlexWrapper>
       {textarea ? (
-        <Textarea placeholder={placeholder || ""} rows={20}></Textarea>
+        <Textarea
+          id={inputId}
+          placeholder={placeholder || ""}
+          rows={20}
+        ></Textarea>
       ) : (
-        <Input placeholder={placeholder || ""} type={type} />
+        <Input id={inputId} placeholder={placeholder || ""} type={type} />
       )}
-    </StyledTextField>
+    </FlexWrapper>
   );
 };
 
-export const StyledTextField = styled.label`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-export const Text = styled.span`
+export const Text = styled.label`
   color: ${ThemeStyled.colors.text.dark};
   font-size: 18px;
   font-weight: 500;
