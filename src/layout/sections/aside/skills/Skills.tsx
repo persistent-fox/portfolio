@@ -13,8 +13,8 @@ interface ISkillsProps {
 
 export const Skills = ({ skills, title, list }: ISkillsProps) => {
   return (
-    <section>
-      <TitleSection mb={"15px"} fontSize="18px" fontWeight="500">
+    <StyledSkills>
+      <TitleSection fontSize="18px" fontWeight="500">
         {title}
       </TitleSection>
       {list ? (
@@ -28,6 +28,12 @@ export const Skills = ({ skills, title, list }: ISkillsProps) => {
           ))}
         </FlexWrapper>
       )}
-    </section>
+    </StyledSkills>
   );
 };
+
+export const StyledSkills = styled.section`
+  ${TitleSection} {
+    margin-bottom: 15px;
+  }
+`;

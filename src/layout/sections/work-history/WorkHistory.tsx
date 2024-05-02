@@ -13,7 +13,7 @@ export const WorkHistory = ({}: IWorkHistoryProps) => {
   return (
     <StyledWorkHistory>
       <TitleSection>Work History</TitleSection>
-      <Paragraph textAlign={"center"} maxWidth={"438px"}>
+      <Paragraph>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
@@ -41,5 +41,9 @@ export const StyledWorkHistory = styled.section`
     gap: 30px;
     padding: 40px 30px;
     background-color: ${ThemeStyled.colors.primary};
+  }
+  ${TitleSection + Paragraph} {
+    max-width: 438px;
+    text-align: center;
   }
 `;

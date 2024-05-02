@@ -58,7 +58,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
   );
   border: none;
   cursor: pointer;
-  transition: 0.3s;
 
   &:active {
     transform: scale(0.95);

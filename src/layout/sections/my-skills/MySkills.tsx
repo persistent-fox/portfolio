@@ -10,7 +10,7 @@ export const MySkills = ({}: IMySkillsProps) => {
   return (
     <StyledMySkills>
       <TitleSection>My Skills</TitleSection>
-      <Paragraph textAlign={"center"} maxWidth={"438px"}>
+      <Paragraph>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
@@ -25,12 +25,7 @@ export const MySkills = ({}: IMySkillsProps) => {
         <Skill iconId={"react"} />
         <Skill iconId={"typescript"} />
         <Skill iconId={"styled-components"} />
-        <Skill
-          width={"92pt"}
-          height={"92px"}
-          viewBox={"0 0 92 92"}
-          iconId={"git"}
-        />
+        <Skill viewBox={"0 0 92 92"} iconId={"git"} />
       </FlexWrapper>
     </StyledMySkills>
   );
@@ -42,4 +37,9 @@ export const StyledMySkills = styled.section`
   align-items: center;
   gap: 25px;
   padding: 35px 0;
+
+  ${Paragraph} {
+    text-align: center;
+    max-width: 438px;
+  }
 `;

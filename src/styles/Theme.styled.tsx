@@ -15,7 +15,7 @@
 //     },
 //   },
 // };
-
+//
 export const ThemeStyled = {
   colors: {
     primary: "#242526",

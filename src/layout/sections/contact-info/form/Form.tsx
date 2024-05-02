@@ -1,7 +1,7 @@
-import { TextField } from "../text-field/TextField";
+import { TextField } from "../../../../components/text-field/TextField";
 import styled from "styled-components";
-import { Button } from "../button/Button";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { Button } from "../../../../components/button/Button";
+import { ThemeStyled } from "../../../../styles/Theme.styled";
 
 interface IFormProps {}
 
@@ -44,10 +44,11 @@ export const Form = ({}: IFormProps) => {
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 25px;
   background-color: ${ThemeStyled.colors.primary};
   padding: 25px;
   max-width: 570px;
   width: 100%;
-  min-width: 410px;
+  min-width: 480px;
 `;

@@ -1,4 +1,4 @@
-import { Form } from "../../../components/form/Form";
+import { Form, StyledForm } from "./form/Form";
 import { InfoCard } from "./info-card/InfoCard";
 import { contactInfo, placeOfResidence } from "../../../mock/data";
 import styled from "styled-components";
@@ -12,19 +12,17 @@ export const ContactInfo = ({}: IContactInfoProps) => {
     <StyledContactInfo>
       <FlexWrapper
         flex={"1 1 auto"}
-        maxWidth={"570px"}
         gap={"50px"}
         direction={"column"}
-        as={"section"}
+        as={"article"}
       >
         <TitleSection>Leave us your info</TitleSection>
         <Form />
       </FlexWrapper>
       <FlexWrapper
         flex={"1 1 auto"}
-        maxWidth={"370px"}
         gap={"50px"}
-        as={"section"}
+        as={"article"}
         direction={"column"}
       >
         <TitleSection>Contact information</TitleSection>
@@ -43,4 +41,8 @@ export const StyledContactInfo = styled.section`
   gap: 30px;
   padding: 35px 0;
   flex-wrap: wrap;
+
+  ${StyledForm} {
+    flex-grow: 1;
+  }
 `;

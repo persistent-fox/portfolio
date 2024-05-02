@@ -4,32 +4,45 @@ import { ThemeStyled } from "../../styles/Theme.styled";
 
 interface ISocialIconProps {
   iconId: string;
-  width?: string;
-  height?: string;
+  widthIcon?: string;
+  heightIcon?: string;
+  widthFrame?: string;
+  heightFrame?: string;
   viewBox?: string;
-  social?: boolean;
 }
 
 export const SocialIcon = ({
   iconId,
-  width,
-  height,
+  widthIcon,
+  heightIcon,
   viewBox,
+  heightFrame,
+  widthFrame,
 }: ISocialIconProps) => {
   return (
-    <StyledSocialIcon>
-      <Icon width={width} height={height} viewBox={viewBox} iconId={iconId} />
+    <StyledSocialIcon heightFrame={heightFrame} widthFrame={widthFrame}>
+      <Icon
+        width={widthIcon}
+        height={heightIcon}
+        viewBox={viewBox}
+        iconId={iconId}
+      />
     </StyledSocialIcon>
   );
 };
 
-export const StyledSocialIcon = styled.a`
+type StyledSocialIconProps = {
+  widthFrame?: string;
+  heightFrame?: string;
+};
+
+export const StyledSocialIcon = styled.a<StyledSocialIconProps>`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  width: 24px;
-  height: 24px;
+  width: ${(props) => props.widthFrame || "24px"};
+  height: ${(props) => props.heightFrame || "24px"};
   border-radius: 50%;
   color: ${ThemeStyled.colors.tertiary};
   background-image: linear-gradient(

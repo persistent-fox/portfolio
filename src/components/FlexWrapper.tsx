@@ -1,17 +1,12 @@
 import styled from "styled-components";
-import { ElementType, ReactNode } from "react";
 
-export type FlexWrapperProps<T extends ElementType = "div"> = {
+export type FlexWrapperProps = {
   direction?: string;
   justify?: string;
   align?: string;
   wrap?: string;
   flex?: string;
   gap?: string;
-  full?: string;
-  maxWidth?: string;
-  mt?: string;
-  mb?: string;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperProps>`
@@ -22,7 +17,5 @@ export const FlexWrapper = styled.div<FlexWrapperProps>`
   flex-wrap: ${(props) => props.wrap || "nowrap"};
   flex: ${(props) => props.flex || "0 1 auto"};
   gap: ${(props) => props.gap || "0"};
-  max-width: ${(props) => props.maxWidth || ""};
-  margin-top: ${(props) => props.mt || "0"};
-  margin-bottom: ${(props) => props.mb || "0"};
+  height: 100%;
 `;

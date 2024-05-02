@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ProjectLink } from "../../../../components/project-link/ProjectLink";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { ThemeStyled } from "../../../../styles/Theme.styled";
+import { Button, StyledButton } from "../../../../components/button/Button";
 
 interface IProjectProps {
   srcImg: string;
@@ -12,7 +13,10 @@ interface IProjectProps {
 export const Project = ({ srcImg }: IProjectProps) => {
   return (
     <StyledProject>
-      <img src={srcImg} alt="project" />
+      <ImageWrapper>
+        <img src={srcImg} alt="project" />
+        <Button>Live Preview</Button>
+      </ImageWrapper>
       <Info>
         <TitleSection fontWeight={"500"} fontSize={"18px"} as={"h3"}>
           Project Tile goes here
@@ -38,15 +42,17 @@ export const Project = ({ srcImg }: IProjectProps) => {
 };
 
 export const StyledProject = styled.article`
+  display: flex;
+  flex-direction: column;
   width: 45%;
-  min-width: 340px;
+  min-width: 380px;
   background-color: ${ThemeStyled.colors.primary};
   border-radius: 0 60px 0 60px;
 
   img {
+    display: block;
     width: 100%;
     height: 260px;
-    border-top-right-radius: 60px;
     object-fit: cover;
   }
 
@@ -69,5 +75,39 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-grow: 1;
   padding: 25px;
+  ${Paragraph} {
+    flex-grow: 1;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  border-top-right-radius: 60px;
+  overflow: hidden;
+
+  &:hover {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(4px);
+    }
+
+    ${StyledButton} {
+      visibility: visible;
+    }
+  }
+
+  ${StyledButton} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+  }
 `;

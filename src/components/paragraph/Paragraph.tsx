@@ -5,9 +5,6 @@ type ParagraphProps = {
   color?: string;
   fontWeight?: string;
   fontSize?: string;
-  maxWidth?: string;
-  textAlign?: string;
-  mb?: string;
 };
 
 export const Paragraph = styled.p<ParagraphProps>`
@@ -18,7 +15,4 @@ export const Paragraph = styled.p<ParagraphProps>`
   font-weight: ${(props) => props.fontWeight || "400"};
   line-height: 24px;
   text-transform: capitalize;
-  max-width: ${(props) => props.maxWidth || "none"};
-  text-align: ${(props) => props.textAlign || "left"};
-  margin-bottom: ${(props) => props.mb || "0"};
 `;

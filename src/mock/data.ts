@@ -104,11 +104,11 @@ export const workHistory = [
 
 export const menuItems = [
   "home",
-  "file-code",
-  "user-icon",
+  "work history",
+  "education",
   "portfolio",
   "blog",
-  "contact",
+  "contacts",
 ];
 
 export const placeOfResidence = [

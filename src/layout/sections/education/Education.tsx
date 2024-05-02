@@ -13,7 +13,7 @@ export const Education = ({}: IEducationProps) => {
   return (
     <StyledEducation>
       <TitleSection>Education</TitleSection>
-      <Paragraph textAlign={"center"} maxWidth={"438px"}>
+      <Paragraph>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </Paragraph>
@@ -35,12 +35,16 @@ export const StyledEducation = styled.section`
   align-items: center;
   gap: 25px;
   padding: 35px 0;
+  ${Paragraph} {
+    text-align: justify;
+  }
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
   padding: 40px 30px;
   background-color: ${ThemeStyled.colors.primary};
 `;

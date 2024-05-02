@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Icon } from "../../../../components/icon/Icon";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
-import { NavIcon } from "../../../../components/nav-icon/NavIcon";
 import { ThemeStyled } from "../../../../styles/Theme.styled";
-import { SocialIcon } from "../../../../components/social-icon/SocialIcon";
+import {
+  SocialIcon,
+  StyledSocialIcon,
+} from "../../../../components/social-icon/SocialIcon";
 
 interface IInfoCardProps {
   infoData: string[][];
@@ -14,13 +15,15 @@ export const InfoCard = ({ infoData, iconId }: IInfoCardProps) => {
   return (
     <StyledInfoCard>
       <SocialIcon
-        width="18"
-        height="18"
+        widthIcon="18"
+        heightIcon="18"
         viewBox="0 0 18 18"
         iconId={iconId}
-      ></SocialIcon>
+        widthFrame={"40px"}
+        heightFrame={"40px"}
+      />
       {infoData.map((item) => (
-        <FlexWrapper justify={"space-between"}>
+        <FlexWrapper key={item[0]} justify={"space-between"}>
           <span>{item[0]}</span>
           <span>{item[1]}</span>
         </FlexWrapper>
@@ -32,15 +35,22 @@ export const InfoCard = ({ infoData, iconId }: IInfoCardProps) => {
 export const StyledInfoCard = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
   padding: 25px;
-  max-width: 370px;
   min-height: 210px;
-  min-width: 310px;
+  min-width: 320px;
   font-size: 18px;
   font-weight: 500;
-  line-height: 123.6%;
+  line-height: 120%;
   text-transform: capitalize;
   color: ${ThemeStyled.colors.text.dark};
   background-color: ${ThemeStyled.colors.primary};
+
+  ${StyledSocialIcon} {
+    margin-bottom: 30px;
+  }
+  ${FlexWrapper} {
+    width: 100%;
+  }
 `;

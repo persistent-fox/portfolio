@@ -34,4 +34,5 @@ export const StyledAside = styled.aside`
   width: 100%;
   padding: 50px 45px 25px 40px;
   background-color: ${ThemeStyled.colors.primary};
+  height: 100%;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TitleSection } from "../../../components/title-section/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { NavIcon } from "../../../components/nav-icon/NavIcon";
+import { NavIcon } from "../menu/nav-icon/NavIcon";
 import { socials } from "../../../mock/data";
 import { ThemeStyled } from "../../../styles/Theme.styled";
 import { SocialIcon } from "../../../components/social-icon/SocialIcon";
@@ -18,9 +18,8 @@ export const Footer = ({}: IFooterProps) => {
         {socials.map((item) => (
           <li key={item}>
             <SocialIcon
-              social
-              width={"14px"}
-              height={"14px"}
+              widthIcon={"14px"}
+              heightIcon={"14px"}
               viewBox={"0 0 14 14"}
               iconId={item}
             />

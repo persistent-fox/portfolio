@@ -21,10 +21,9 @@ export const MainInfo = ({ socials }: IMainInfoProps) => {
         {socials.map((item) => (
           <li key={item}>
             <SocialIcon
-              width="14"
-              height="14"
+              widthIcon="14"
+              heightIcon="14"
               viewBox="0 0 14 14"
-              social
               iconId={item}
             />
           </li>

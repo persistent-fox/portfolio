@@ -16,7 +16,21 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+  button {
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+  }
   body {
-    background-color: ${ThemeStyled.colors.grey.medium};
+    background-color: ${ThemeStyled.colors.grey.medium};  margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: ${ThemeStyled.colors.text.tertiary};
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
   }
 `;

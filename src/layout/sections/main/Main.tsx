@@ -12,10 +12,10 @@ export const Main = ({}: IMainProps) => {
     <StyledMain>
       <Information>
         <Name>I’m Rayan Adlrdard</Name>
-        <TitleSection mb={"18px"} fontSize="48px" as="h1">
+        <TitleSection fontSize="48px" as="h1">
           <Highlighted>Front-end</Highlighted> Developer
         </TitleSection>
-        <Paragraph mb={"25px"}>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
           feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
           lectus.
@@ -38,20 +38,29 @@ export const Main = ({}: IMainProps) => {
 export const StyledMain = styled.section`
   position: relative;
   min-height: 468px;
-  background-color: ${ThemeStyled.colors.primary};
+  background: ${ThemeStyled.colors.primary}
+    url("./../../../assets/images/background.svg") no-repeat center center /
+    cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 58px 0 58px;
   flex-wrap: wrap;
   img {
-    height: 100%;
+    max-width: 344px;
+  }
+  ${Paragraph} {
+    margin-bottom: 25px;
   }
 `;
 
 export const Information = styled.div`
   max-width: 500px;
   width: 100%;
+
+  ${TitleSection} {
+    margin-bottom: 18px;
+  }
 `;
 
 export const Name = styled.span`
@@ -59,7 +68,7 @@ export const Name = styled.span`
   color: ${ThemeStyled.colors.text.tertiary};
   font-size: 48px;
   font-weight: 700;
-  line-height: 123.6%;
+  line-height: 120%;
 `;
 
 export const Highlighted = styled.span`

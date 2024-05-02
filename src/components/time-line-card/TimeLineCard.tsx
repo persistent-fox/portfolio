@@ -21,9 +21,7 @@ export const TimeLineCard = ({
   return (
     <StyledTimeLineCard>
       <div className="wrapper">
-        <TitleSection mb={"25px"} fontSize={"18px"}>
-          {placeName}
-        </TitleSection>
+        <TitleSection fontSize={"18px"}>{placeName}</TitleSection>
         <Place>
           <span className="job-title">{jobTitle}</span>
           <span className="date">{date}</span>
@@ -44,6 +42,10 @@ export const StyledTimeLineCard = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  ${TitleSection} {
+    margin-bottom: 25px;
+  }
   .wrapper {
     flex: 1;
     min-width: 200px;
@@ -54,6 +56,9 @@ export const StyledTimeLineCard = styled.div`
     gap: 25px;
     flex: 2;
     min-width: 320px;
+  }
+  ${Paragraph} {
+    text-align: justify;
   }
 `;
 
@@ -76,7 +81,7 @@ export const Place = styled.div`
     color: ${ThemeStyled.colors.tertiary};
     font-size: 10px;
     font-weight: 400;
-    line-height: 100.9%;
+    line-height: 100%;
     padding: 4px 8px;
     border-radius: 1px;
     background-image: linear-gradient(

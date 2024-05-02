@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavIcon } from "../nav-icon/NavIcon";
+import { NavIcon } from "../../layout/sections/menu/nav-icon/NavIcon";
 
 interface INavigationProps {
   menuItems: string[];
@@ -25,6 +25,6 @@ export const StyledMenu = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 44px;
   }
 `;
