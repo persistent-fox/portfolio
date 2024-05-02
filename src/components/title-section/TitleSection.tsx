@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 type StyledTitleSectionProps = {
   fontSize?: string;
@@ -7,7 +7,7 @@ type StyledTitleSectionProps = {
 };
 
 export const TitleSection = styled.h2<StyledTitleSectionProps>`
-  color: ${ThemeStyled.colors.text.tertiary};
+  color: ${theme.colors.text.tertiary};
   font-size: ${(props) => props.fontSize || "32px"};
   font-weight: ${(props) => props.fontSize || "700"};
   line-height: 120%;

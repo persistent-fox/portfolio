@@ -1,4 +1,4 @@
-// export const ThemeStyled = {
+// export const Theme = {
 //   colors: {
 //     primary: "#ffffff",
 //     secondary: "#ffe377",
@@ -16,7 +16,7 @@
 //   },
 // };
 //
-export const ThemeStyled = {
+export const theme = {
   colors: {
     primary: "#242526",
     secondary: "#ffe377",
@@ -31,5 +31,9 @@ export const ThemeStyled = {
       tertiary: "#fff",
       dark: "#ABB2BF",
     },
+  },
+  media: {
+    tablet: "screen and (max-width: 768px)",
+    mobile: "screen and (max-width: 576px)",
   },
 };

@@ -4,7 +4,7 @@ import { Divider } from "../../../components/devider/Divider";
 import { languages, skills, socials } from "../../../mock/data";
 import { Skills } from "./skills/Skills";
 import { MainInfo } from "./main-info/MainInfo";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 
 interface IAsideProps {}
 
@@ -33,6 +33,6 @@ export const StyledAside = styled.aside`
   max-width: 305px;
   width: 100%;
   padding: 50px 45px 25px 40px;
-  background-color: ${ThemeStyled.colors.primary};
+  background-color: ${theme.colors.primary};
   height: 100%;
 `;

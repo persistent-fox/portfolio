@@ -11,6 +11,7 @@ import { Portfolio } from "./layout/sections/portfolio/Portfolio";
 import { ContactInfo } from "./layout/sections/contact-info/contactInfo";
 import { Footer } from "./layout/sections/footer/Footer";
 import { MySkills } from "./layout/sections/my-skills/MySkills";
+import { Burger } from "./layout/sections/menu/burger/Burger";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <FlexWrapper justify={"space-between"}>
         <Aside />
         <Container>
+          <Burger />
           <Main />
           <MySkills />
           <Education />

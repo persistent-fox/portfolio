@@ -3,7 +3,7 @@ import { Paragraph } from "../../../../components/paragraph/Paragraph";
 import styled from "styled-components";
 import { ProjectLink } from "../../../../components/project-link/ProjectLink";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
-import { ThemeStyled } from "../../../../styles/Theme.styled";
+import { theme } from "../../../../styles/theme";
 import { Button, StyledButton } from "../../../../components/button/Button";
 
 interface IProjectProps {
@@ -46,7 +46,7 @@ export const StyledProject = styled.article`
   flex-direction: column;
   width: 45%;
   min-width: 380px;
-  background-color: ${ThemeStyled.colors.primary};
+  background-color: ${theme.colors.primary};
   border-radius: 0 60px 0 60px;
 
   img {
@@ -60,12 +60,12 @@ export const StyledProject = styled.article`
     border-radius: 4px;
     background-image: linear-gradient(
       to right,
-      ${ThemeStyled.colors.secondary},
-      ${ThemeStyled.colors.accent}
+      ${theme.colors.secondary},
+      ${theme.colors.accent}
     );
     padding: 4px 8px;
     font-size: 16px;
-    color: ${ThemeStyled.colors.tertiary};
+    color: ${theme.colors.tertiary};
     font-weight: 600;
     line-height: 1;
   }

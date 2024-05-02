@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
-import { ThemeStyled } from "../../../../styles/Theme.styled";
+import { theme } from "../../../../styles/theme";
 import {
   SocialIcon,
   StyledSocialIcon,
@@ -44,8 +44,8 @@ export const StyledInfoCard = styled.article`
   font-weight: 500;
   line-height: 120%;
   text-transform: capitalize;
-  color: ${ThemeStyled.colors.text.dark};
-  background-color: ${ThemeStyled.colors.primary};
+  color: ${theme.colors.text.dark};
+  background-color: ${theme.colors.primary};
 
   ${StyledSocialIcon} {
     margin-bottom: 30px;

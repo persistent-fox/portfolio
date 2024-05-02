@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Project } from "./project/Project";
 import srcImg from "./../../../assets/images/projects/proj-1.webp";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 
 interface IPortfolioProps {}
 
@@ -44,7 +44,7 @@ export const StyledPortfolio = styled.section`
 export const Slide = styled.span`
   width: 14px;
   height: 14px;
-  background-color: ${ThemeStyled.colors.grey.dark};
+  background-color: ${theme.colors.grey.dark};
   border-radius: 50%;
   cursor: pointer;
   &.active {
@@ -52,8 +52,8 @@ export const Slide = styled.span`
     border-radius: 8px;
     background-image: linear-gradient(
       to right,
-      ${ThemeStyled.colors.secondary},
-      ${ThemeStyled.colors.accent}
+      ${theme.colors.secondary},
+      ${theme.colors.accent}
     );
   }
 `;

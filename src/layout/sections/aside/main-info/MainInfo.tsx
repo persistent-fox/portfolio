@@ -3,7 +3,7 @@ import srcImg from "../../../../assets/images/user-photo.png";
 import { TitleSection } from "../../../../components/title-section/TitleSection";
 import styled from "styled-components";
 import { SocialIcon } from "../../../../components/social-icon/SocialIcon";
-import { ThemeStyled } from "../../../../styles/Theme.styled";
+import { theme } from "../../../../styles/theme";
 
 interface IMainInfoProps {
   socials: string[];
@@ -49,7 +49,7 @@ export const StyledMainInfo = styled.div`
 `;
 
 export const JobTitle = styled.h2`
-  color: ${ThemeStyled.colors.text.dark};
+  color: ${theme.colors.text.dark};
   font-kerning: none;
   font-feature-settings: "calt" off;
   font-size: 15px;

@@ -5,7 +5,7 @@ import { TimeLineCard } from "../../../components/time-line-card/TimeLineCard";
 import { Divider } from "../../../components/devider/Divider";
 import { education } from "../../../mock/data";
 import { Fragment } from "react";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 
 interface IEducationProps {}
 
@@ -46,5 +46,5 @@ export const Info = styled.div`
   gap: 30px;
   width: 100%;
   padding: 40px 30px;
-  background-color: ${ThemeStyled.colors.primary};
+  background-color: ${theme.colors.primary};
 `;

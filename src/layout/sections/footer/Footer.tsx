@@ -3,7 +3,7 @@ import { TitleSection } from "../../../components/title-section/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { NavIcon } from "../menu/nav-icon/NavIcon";
 import { socials } from "../../../mock/data";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 import { SocialIcon } from "../../../components/social-icon/SocialIcon";
 
 interface IFooterProps {}
@@ -38,8 +38,8 @@ export const StyledFooter = styled.footer`
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  background-color: ${ThemeStyled.colors.primary};
-  color: ${ThemeStyled.colors.text.tertiary};
+  background-color: ${theme.colors.primary};
+  color: ${theme.colors.text.tertiary};
   font-kerning: none;
   font-feature-settings: "calt" off;
   font-size: 15px;

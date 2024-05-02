@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Navigation } from "../../../components/navigation/Navigation";
 import { NavIcon } from "./nav-icon/NavIcon";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 
 interface INavigationProps {
   menuItems: string[];
@@ -24,12 +24,12 @@ export const StyledMenu = styled.aside`
   align-items: center;
   gap: 100px;
   padding: 50px 10px;
-  background: ${ThemeStyled.colors.grey.light};
+  background: ${theme.colors.grey.light};
   box-shadow: 4px 0 10px 0 rgba(47, 122, 249, 0.1);
   width: 108px;
   height: 100vh;
 
   a {
-    color: ${ThemeStyled.colors.text.dark};
+    color: ${theme.colors.text.dark};
   }
 `;

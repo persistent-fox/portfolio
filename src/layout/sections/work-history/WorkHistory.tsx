@@ -5,7 +5,7 @@ import { TimeLineCard } from "../../../components/time-line-card/TimeLineCard";
 import { Divider } from "../../../components/devider/Divider";
 import styled from "styled-components";
 import { Fragment } from "react";
-import { ThemeStyled } from "../../../styles/Theme.styled";
+import { theme } from "../../../styles/theme";
 
 interface IWorkHistoryProps {}
 
@@ -40,7 +40,7 @@ export const StyledWorkHistory = styled.section`
     flex-direction: column;
     gap: 30px;
     padding: 40px 30px;
-    background-color: ${ThemeStyled.colors.primary};
+    background-color: ${theme.colors.primary};
   }
   ${TitleSection + Paragraph} {
     max-width: 438px;

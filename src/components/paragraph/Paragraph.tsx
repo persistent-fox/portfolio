@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 type ParagraphProps = {
   color?: string;
@@ -8,7 +8,7 @@ type ParagraphProps = {
 };
 
 export const Paragraph = styled.p<ParagraphProps>`
-  color: ${(props) => props.color || ThemeStyled.colors.text.dark};
+  color: ${(props) => props.color || theme.colors.text.dark};
   font-kerning: none;
   font-feature-settings: "calt" off;
   font-size: ${(props) => props.fontSize || "16px"};

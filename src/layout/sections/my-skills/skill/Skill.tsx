@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { TitleSection } from "../../../../components/title-section/TitleSection";
 import { Paragraph } from "../../../../components/paragraph/Paragraph";
 import { Icon } from "../../../../components/icon/Icon";
-import { ThemeStyled } from "../../../../styles/Theme.styled";
+import { theme } from "../../../../styles/theme";
 
 interface ISkillProps {
   iconId: string;
@@ -45,7 +45,7 @@ export const Frame = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${ThemeStyled.colors.tertiary};
+  color: ${theme.colors.tertiary};
   width: 80px;
   height: 80px;
   margin-bottom: 45px;
@@ -56,8 +56,8 @@ export const Frame = styled.div`
     height: 80px;
     background-image: linear-gradient(
       to right,
-      ${ThemeStyled.colors.secondary},
-      ${ThemeStyled.colors.accent}
+      ${theme.colors.secondary},
+      ${theme.colors.accent}
     );
     transform: rotate(45deg);
     z-index: -1;

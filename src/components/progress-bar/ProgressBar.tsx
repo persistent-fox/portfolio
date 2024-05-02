@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 interface IProgressBarProps {
   percent: string;
@@ -28,7 +28,7 @@ export const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${ThemeStyled.colors.text.dark};
+  color: ${theme.colors.text.dark};
   font-kerning: none;
   font-feature-settings: "calt" off;
   font-size: 15px;
@@ -39,7 +39,7 @@ export const Info = styled.div`
 `;
 
 export const Field = styled.div`
-  border: 1px solid ${ThemeStyled.colors.accent};
+  border: 1px solid ${theme.colors.accent};
   padding: 1px;
   height: 5px;
   width: 100%;
@@ -50,8 +50,8 @@ export const Progress = styled.span<StyledProgressBarProps>`
   display: block;
   background-image: linear-gradient(
     to right,
-    ${ThemeStyled.colors.secondary},
-    ${ThemeStyled.colors.accent}
+    ${theme.colors.secondary},
+    ${theme.colors.accent}
   );
   height: 2px;
   border-radius: 5px;

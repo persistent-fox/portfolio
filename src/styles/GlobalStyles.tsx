@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeStyled } from "./Theme.styled";
+import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -22,13 +22,13 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
   body {
-    background-color: ${ThemeStyled.colors.grey.medium};  margin: 0;
+    background-color: ${theme.colors.grey.medium};  margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${ThemeStyled.colors.text.tertiary};
+    color: ${theme.colors.text.tertiary};
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;

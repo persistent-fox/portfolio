@@ -1,7 +1,7 @@
 import { TitleSection } from "../title-section/TitleSection";
 import { Paragraph } from "../paragraph/Paragraph";
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 interface ITimeLineCardProps {
   date: string;
@@ -68,7 +68,7 @@ export const Place = styled.div`
   align-items: center;
   gap: 20px;
   .job-title {
-    color: ${ThemeStyled.colors.text.tertiary};
+    color: ${theme.colors.text.tertiary};
     font-kerning: none;
     font-feature-settings: "calt" off;
     font-size: 15px;
@@ -78,7 +78,7 @@ export const Place = styled.div`
   }
 
   .date {
-    color: ${ThemeStyled.colors.tertiary};
+    color: ${theme.colors.tertiary};
     font-size: 10px;
     font-weight: 400;
     line-height: 100%;
@@ -86,8 +86,8 @@ export const Place = styled.div`
     border-radius: 1px;
     background-image: linear-gradient(
       to right,
-      ${ThemeStyled.colors.secondary},
-      ${ThemeStyled.colors.accent}
+      ${theme.colors.secondary},
+      ${theme.colors.accent}
     );
   }
 `;

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import React from "react";
 import { Icon } from "../icon/Icon";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 interface IButtonProps {
   primary?: boolean;
@@ -50,11 +50,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 600;
   line-height: normal;
   padding: 10px 30px;
-  color: ${(props) => props.color || ThemeStyled.colors.tertiary};
+  color: ${(props) => props.color || theme.colors.tertiary};
   background-image: linear-gradient(
     to right,
-    ${ThemeStyled.colors.secondary},
-    ${ThemeStyled.colors.accent}
+    ${theme.colors.secondary},
+    ${theme.colors.accent}
   );
   border: none;
   cursor: pointer;
@@ -67,7 +67,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) =>
     props.primary &&
     css<StyledButtonProps>`
-      color: ${(props) => props.color || ThemeStyled.colors.tertiary};
+      color: ${(props) => props.color || theme.colors.tertiary};
       font-size: ${(props) => props.fontSize || "16px"};
       font-weight: ${(props) => props.fontWeight || "500"};
       padding: 16px 32px;

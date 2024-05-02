@@ -1,6 +1,6 @@
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 interface ISocialIconProps {
   iconId: string;
@@ -44,11 +44,11 @@ export const StyledSocialIcon = styled.a<StyledSocialIconProps>`
   width: ${(props) => props.widthFrame || "24px"};
   height: ${(props) => props.heightFrame || "24px"};
   border-radius: 50%;
-  color: ${ThemeStyled.colors.tertiary};
+  color: ${theme.colors.tertiary};
   background-image: linear-gradient(
     to right,
-    ${ThemeStyled.colors.secondary},
-    ${ThemeStyled.colors.accent}
+    ${theme.colors.secondary},
+    ${theme.colors.accent}
   );
   transition: all 0.3s ease-in-out;
   &:hover {

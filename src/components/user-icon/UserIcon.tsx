@@ -1,6 +1,6 @@
 import exp from "constants";
 import styled from "styled-components";
-import { ThemeStyled } from "../../styles/Theme.styled";
+import { theme } from "../../styles/theme";
 
 interface IUserIconProps {
   srcImg: string;
@@ -19,7 +19,7 @@ export const StyledUserIcon = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: ${ThemeStyled.colors.grey.medium};
+  background: ${theme.colors.grey.medium};
   &:before {
     content: "";
     position: absolute;
