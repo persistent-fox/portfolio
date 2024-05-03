@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { TitleSection } from "../../../components/title-section/TitleSection";
-import { Paragraph } from "../../../components/paragraph/Paragraph";
+import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Skill } from "./skill/Skill";
 
@@ -10,10 +9,10 @@ export const MySkills = ({}: IMySkillsProps) => {
   return (
     <StyledMySkills>
       <TitleSection>My Skills</TitleSection>
-      <Paragraph>
+      <p>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
-      </Paragraph>
+      </p>
       <FlexWrapper
         align={"flex-start"}
         justify={"space-between"}
@@ -38,8 +37,9 @@ export const StyledMySkills = styled.section`
   gap: 25px;
   padding: 35px 0;
 
-  ${Paragraph} {
+  p {
     text-align: center;
     max-width: 438px;
+    margin-bottom: 20px;
   }
 `;

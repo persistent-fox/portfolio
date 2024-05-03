@@ -1,10 +1,9 @@
-import { TitleSection } from "../../../../components/title-section/TitleSection";
-import { Paragraph } from "../../../../components/paragraph/Paragraph";
 import styled from "styled-components";
 import { ProjectLink } from "../../../../components/project-link/ProjectLink";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { theme } from "../../../../styles/theme";
 import { Button, StyledButton } from "../../../../components/button/Button";
+import { TitleCard } from "../../../../components/TitleCard";
 
 interface IProjectProps {
   srcImg: string;
@@ -18,14 +17,12 @@ export const Project = ({ srcImg }: IProjectProps) => {
         <Button>Live Preview</Button>
       </ImageWrapper>
       <Info>
-        <TitleSection fontWeight={"500"} fontSize={"18px"} as={"h3"}>
-          Project Tile goes here
-        </TitleSection>
-        <Paragraph>
+        <TitleCard>Project Tile goes here</TitleCard>
+        <p>
           This is sample project description random things are here in
           description This is sample project lorem ipsum generator for dummy
           content.
-        </Paragraph>
+        </p>
         <FlexWrapper as={"ul"} wrap={"wrap"} gap={"10px"}>
           <li>HTML</li>
           <li>JavaScript</li>
@@ -69,6 +66,11 @@ export const StyledProject = styled.article`
     font-weight: 600;
     line-height: 1;
   }
+
+  @media ${theme.media.small} {
+    min-width: 320px;
+    width: 100%;
+  }
 `;
 
 export const Info = styled.div`
@@ -77,8 +79,13 @@ export const Info = styled.div`
   gap: 10px;
   flex-grow: 1;
   padding: 25px;
-  ${Paragraph} {
+  p {
     flex-grow: 1;
+    text-align: justify;
+  }
+
+  p + ${FlexWrapper} {
+    margin-bottom: 20px;
   }
 `;
 

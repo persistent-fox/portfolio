@@ -1,9 +1,10 @@
 import { UserIcon } from "../../../../components/user-icon/UserIcon";
 import srcImg from "../../../../assets/images/user-photo.png";
-import { TitleSection } from "../../../../components/title-section/TitleSection";
+import { TitleSection } from "../../../../components/TitleSection";
 import styled from "styled-components";
 import { SocialIcon } from "../../../../components/social-icon/SocialIcon";
 import { theme } from "../../../../styles/theme";
+import { TitleCard } from "../../../../components/TitleCard";
 
 interface IMainInfoProps {
   socials: string[];
@@ -13,10 +14,8 @@ export const MainInfo = ({ socials }: IMainInfoProps) => {
   return (
     <StyledMainInfo>
       <UserIcon srcImg={srcImg} />
-      <TitleSection as={"span"} fontSize="18px" fontWeight="500">
-        Rayan Adlardard
-      </TitleSection>
-      <JobTitle>Font-end Developer</JobTitle>
+      <TitleCard as={"span"}>Margarita Abdullina</TitleCard>
+      <h2>Font-end Developer</h2>
       <ul>
         {socials.map((item) => (
           <li key={item}>
@@ -46,14 +45,4 @@ export const StyledMainInfo = styled.div`
     align-items: center;
     width: 100%;
   }
-`;
-
-export const JobTitle = styled.h2`
-  color: ${theme.colors.text.dark};
-  font-kerning: none;
-  font-feature-settings: "calt" off;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 24px;
-  text-transform: capitalize;
 `;

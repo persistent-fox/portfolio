@@ -25,7 +25,7 @@ export const StyledMenu = styled.aside<{ isOpenNav: boolean }>`
   padding: 50px 10px;
   background: ${theme.colors.grey.light};
   box-shadow: 4px 0 10px 0 rgba(47, 122, 249, 0.1);
-  width: 108px;
+  min-width: 108px;
   height: 100vh;
 
   a {

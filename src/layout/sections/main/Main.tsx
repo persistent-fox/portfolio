@@ -1,6 +1,5 @@
 import { Button } from "../../../components/button/Button";
 import styled from "styled-components";
-import { Paragraph } from "../../../components/paragraph/Paragraph";
 import srcImg from "./../../../assets/images/photo.webp";
 import { theme } from "../../../styles/theme";
 
@@ -10,15 +9,15 @@ export const Main = ({}: IMainProps) => {
   return (
     <StyledMain>
       <Information>
-        <Name>I’m Rayan Adlrdard</Name>
+        <Name>I’m Margarita Abdullina</Name>
         <Title>
           <Highlighted>Front-end</Highlighted> Developer
         </Title>
-        <Paragraph>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
           feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
           lectus.
-        </Paragraph>
+        </p>
         <Button
           primary
           width="16px"
@@ -47,8 +46,9 @@ export const StyledMain = styled.section`
   flex-wrap: wrap;
   img {
     max-width: 344px;
+    width: 100%;
   }
-  ${Paragraph} {
+  p {
     margin-bottom: 25px;
   }
 
@@ -75,6 +75,7 @@ export const Name = styled.span`
 export const Title = styled.h1`
   font-size: calc((100vw - 375px) / (1440 - 375) * (48 - 40) + 40px);
   margin-bottom: 18px;
+  color: ${theme.colors.text.tertiary};
 `;
 
 export const Highlighted = styled.span`

@@ -28,13 +28,6 @@ export const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${theme.colors.text.dark};
-  font-kerning: none;
-  font-feature-settings: "calt" off;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 24px;
-  text-transform: capitalize;
   margin-bottom: 5px;
 `;
 

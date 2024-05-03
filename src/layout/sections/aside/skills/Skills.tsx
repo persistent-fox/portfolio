@@ -1,9 +1,9 @@
-import { TitleSection } from "../../../../components/title-section/TitleSection";
-import { extraSkills, languages } from "../../../../mock/data";
+import { extraSkills } from "../../../../mock/data";
 import { ProgressBar } from "../../../../components/progress-bar/ProgressBar";
 import { List } from "../../../../components/list/List";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { TitleCard } from "../../../../components/TitleCard";
 
 interface ISkillsProps {
   skills: string[][] | string[];
@@ -14,9 +14,7 @@ interface ISkillsProps {
 export const Skills = ({ skills, title, list }: ISkillsProps) => {
   return (
     <StyledSkills>
-      <TitleSection fontSize="18px" fontWeight="500">
-        {title}
-      </TitleSection>
+      <TitleCard>{title}</TitleCard>
       {list ? (
         <List listItems={extraSkills} />
       ) : (
@@ -33,7 +31,7 @@ export const Skills = ({ skills, title, list }: ISkillsProps) => {
 };
 
 export const StyledSkills = styled.section`
-  ${TitleSection} {
+  ${TitleCard} {
     margin-bottom: 15px;
   }
 `;

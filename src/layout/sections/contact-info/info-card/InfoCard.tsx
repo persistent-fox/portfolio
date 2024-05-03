@@ -40,10 +40,7 @@ export const StyledInfoCard = styled.article`
   padding: 25px;
   min-height: 210px;
   min-width: 320px;
-  font-size: 18px;
   font-weight: 500;
-  line-height: 120%;
-  text-transform: capitalize;
   color: ${theme.colors.text.dark};
   background-color: ${theme.colors.primary};
 
@@ -52,5 +49,11 @@ export const StyledInfoCard = styled.article`
   }
   ${FlexWrapper} {
     width: 100%;
+    span + span {
+      font-weight: 400;
+    }
+  }
+  @media ${theme.media.small} {
+    min-width: 0;
   }
 `;

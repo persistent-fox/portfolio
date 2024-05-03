@@ -1,7 +1,6 @@
-import { TitleSection } from "../title-section/TitleSection";
-import { Paragraph } from "../paragraph/Paragraph";
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { TitleCard } from "../TitleCard";
 
 interface ITimeLineCardProps {
   date: string;
@@ -21,18 +20,16 @@ export const TimeLineCard = ({
   return (
     <StyledTimeLineCard>
       <div className="wrapper">
-        <TitleSection fontSize={"18px"}>{placeName}</TitleSection>
+        <TitleCard>{placeName}</TitleCard>
         <Place>
-          <span className="job-title">{jobTitle}</span>
-          <span className="date">{date}</span>
+          <span>{jobTitle}</span>
+          <span>{date}</span>
         </Place>
       </div>
-      <div className="description">
-        <TitleSection fontSize={"18px"} fontWeight={"500"} as={"h3"}>
-          {title}
-        </TitleSection>
-        <Paragraph>{description}</Paragraph>
-      </div>
+      <Description>
+        <TitleCard>{title}</TitleCard>
+        <p>{description}</p>
+      </Description>
     </StyledTimeLineCard>
   );
 };
@@ -42,22 +39,16 @@ export const StyledTimeLineCard = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  gap: 20px;
 
-  ${TitleSection} {
+  ${TitleCard} {
     margin-bottom: 25px;
   }
   .wrapper {
     flex: 1;
     min-width: 200px;
   }
-  .description {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    flex: 2;
-    min-width: 320px;
-  }
-  ${Paragraph} {
+  p {
     text-align: justify;
   }
 `;
@@ -67,7 +58,9 @@ export const Place = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  .job-title {
+  margin-bottom: 20px;
+  max-width: fit-content;
+  &:first-child {
     color: ${theme.colors.text.tertiary};
     font-kerning: none;
     font-feature-settings: "calt" off;
@@ -77,7 +70,7 @@ export const Place = styled.div`
     text-transform: capitalize;
   }
 
-  .date {
+  &:last-child {
     color: ${theme.colors.tertiary};
     font-size: 10px;
     font-weight: 400;
@@ -90,4 +83,11 @@ export const Place = styled.div`
       ${theme.colors.accent}
     );
   }
+`;
+
+const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  min-width: 210px;
 `;

@@ -28,7 +28,9 @@ export const GlobalStyles = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${theme.colors.text.tertiary};
+    font-kerning: none;
+    font-feature-settings: "calt" off;
+    color: ${theme.colors.text.dark};
     font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
     font-weight: 400;
     line-height: 1.2;

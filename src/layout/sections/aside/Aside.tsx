@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../../components/button/Button";
-import { Divider } from "../../../components/devider/Divider";
+import { Divider } from "../../../components/Divider";
 import { languages, skills, socials } from "../../../mock/data";
 import { Skills } from "./skills/Skills";
 import { MainInfo } from "./main-info/MainInfo";
@@ -30,7 +30,7 @@ export const StyledAside = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 305px;
+  max-width: 375px;
   width: 100%;
   padding: 50px 45px 25px 40px;
   background-color: ${theme.colors.primary};

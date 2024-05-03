@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { TitleSection } from "../../../components/title-section/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { NavIcon } from "../menu/nav-icon/NavIcon";
 import { socials } from "../../../mock/data";
 import { theme } from "../../../styles/theme";
 import { SocialIcon } from "../../../components/social-icon/SocialIcon";
@@ -11,9 +9,7 @@ interface IFooterProps {}
 export const Footer = ({}: IFooterProps) => {
   return (
     <StyledFooter>
-      <TitleSection fontSize={"24px"} as={"span"}>
-        Margarita
-      </TitleSection>
+      <Name>Margarita</Name>
       <FlexWrapper gap={"10px"} as={"ul"}>
         {socials.map((item) => (
           <li key={item}>
@@ -50,4 +46,10 @@ export const StyledFooter = styled.footer`
 
 export const Copyright = styled.small`
   font-size: 12px;
+`;
+
+const Name = styled.span`
+  font-size: 24px;
+  color: ${theme.colors.text.tertiary};
+  margin-bottom: 20px;
 `;

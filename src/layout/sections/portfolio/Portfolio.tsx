@@ -1,5 +1,4 @@
-import { TitleSection } from "../../../components/title-section/TitleSection";
-import { Paragraph } from "../../../components/paragraph/Paragraph";
+import { TitleSection } from "../../../components/TitleSection";
 import styled from "styled-components";
 import { Project } from "./project/Project";
 import srcImg from "./../../../assets/images/projects/proj-1.webp";
@@ -12,15 +11,15 @@ export const Portfolio = ({}: IPortfolioProps) => {
   return (
     <StyledPortfolio>
       <TitleSection>Portfolio</TitleSection>
-      <Paragraph>
+      <p>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
-      </Paragraph>
-      <FlexWrapper justify={"space-between"} wrap={"wrap"}>
+      </p>
+      <FlexWrapper justify={"center"} gap={"40px"} wrap={"wrap"}>
         <Project srcImg={srcImg} />
         <Project srcImg={srcImg} />
       </FlexWrapper>
-      <FlexWrapper gap={"10px"} style={{ marginTop: "5px" }}>
+      <FlexWrapper gap={"10px"}>
         <Slide />
         <Slide className={"active"} />
         <Slide />
@@ -36,8 +35,10 @@ export const StyledPortfolio = styled.section`
   gap: 25px;
   padding: 35px 0;
 
-  ${Paragraph} {
+  ${TitleSection} + p {
     max-width: 438px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 `;
 

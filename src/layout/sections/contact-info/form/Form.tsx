@@ -48,7 +48,11 @@ export const StyledForm = styled.form`
   gap: 25px;
   background-color: ${theme.colors.primary};
   padding: 25px;
-  max-width: 570px;
   width: 100%;
   min-width: 480px;
+
+  @media ${theme.media.small} {
+    min-width: 0;
+    padding: 15px;
+  }
 `;

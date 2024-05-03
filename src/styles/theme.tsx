@@ -22,6 +22,7 @@ export const theme = {
     secondary: "#ffe377",
     accent: "#ff8400",
     tertiary: "#2B2B2B",
+    errors: "#a60000",
     grey: {
       light: "#242526",
       medium: "#18191a",

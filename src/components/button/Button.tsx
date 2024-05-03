@@ -48,7 +48,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
   gap: 10px;
   font-size: 14px;
   font-weight: 600;
-  line-height: normal;
   padding: 10px 30px;
   color: ${(props) => props.color || theme.colors.tertiary};
   background-image: linear-gradient(

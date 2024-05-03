@@ -3,7 +3,7 @@ import { InfoCard } from "./info-card/InfoCard";
 import { contactInfo, placeOfResidence } from "../../../mock/data";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { TitleSection } from "../../../components/title-section/TitleSection";
+import { TitleSection } from "../../../components/TitleSection";
 
 interface IContactInfoProps {}
 

@@ -23,10 +23,10 @@ export const TextField = ({
   return (
     <StyledTextField>
       <FlexWrapper gap={"10px"}>
-        <Text htmlFor={inputId}>
-          {label}
-          {required && " (Required)"}
-        </Text>
+        <Label htmlFor={inputId}>
+          <span>{label}</span>
+          {required && <span>*</span>}
+        </Label>
       </FlexWrapper>
       {textarea ? (
         <Textarea
@@ -47,12 +47,14 @@ export const StyledTextField = styled.div`
   gap: 12px;
 `;
 
-export const Text = styled.label`
-  color: ${theme.colors.text.dark};
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 120%;
-  text-transform: capitalize;
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  span + span {
+    color: ${theme.colors.errors};
+    font-weight: 700;
+  }
 `;
 
 export const Input = styled.input`
@@ -61,10 +63,23 @@ export const Input = styled.input`
   border: none;
   padding: 16px 20px;
   width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
+  font-weight: 400;
+  line-height: 1.2;
   color: ${theme.colors.text.dark};
   border-radius: 5px;
+
   &:focus-visible {
     outline: 1px solid ${theme.colors.text.dark};
+  }
+
+  &::placeholder {
+    font-family: "Inter", sans-serif;
+    color: #4e4f50;
+    font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
+    font-weight: 400;
+    line-height: 1.2;
   }
 `;
 
@@ -75,9 +90,20 @@ export const Textarea = styled.textarea`
   padding: 10px 20px;
   width: 100%;
   height: 210px;
+  font-family: "Inter", sans-serif;
+  font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
+  font-weight: 400;
+  line-height: 1.2;
   color: ${theme.colors.text.dark};
   border-radius: 5px;
   &:focus-visible {
     outline: 1px solid ${theme.colors.text.dark};
+  }
+  &::placeholder {
+    font-family: "Inter", sans-serif;
+    color: #4e4f50;
+    font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
+    font-weight: 400;
+    line-height: 1.2;
   }
 `;
