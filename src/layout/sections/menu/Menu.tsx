@@ -1,24 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Navigation } from "../../../components/navigation/Navigation";
 import { NavIcon } from "./nav-icon/NavIcon";
 import { theme } from "../../../styles/theme";
 
 interface INavigationProps {
   menuItems: string[];
+  isOpenNav: boolean;
 }
 
-export const Menu = ({ menuItems }: INavigationProps) => {
+export const Menu = ({ menuItems, isOpenNav }: INavigationProps) => {
   return (
-    <StyledMenu>
+    <StyledMenu isOpenNav={isOpenNav}>
       <NavIcon width="30px" height="30px" viewBox="0 0 30 30" iconId="theme" />
       <Navigation menuItems={menuItems} />
     </StyledMenu>
   );
 };
 
-export const StyledMenu = styled.aside`
-  position: fixed;
-  right: 0;
+export const StyledMenu = styled.aside<{ isOpenNav: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,4 +31,16 @@ export const StyledMenu = styled.aside`
   a {
     color: ${theme.colors.text.dark};
   }
+
+  @media ${theme.media.large} {
+    position: fixed;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  ${(props) =>
+    props.isOpenNav &&
+    css`
+      transform: translateX(-100%);
+    `}
 `;

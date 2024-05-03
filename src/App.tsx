@@ -12,14 +12,17 @@ import { ContactInfo } from "./layout/sections/contact-info/contactInfo";
 import { Footer } from "./layout/sections/footer/Footer";
 import { MySkills } from "./layout/sections/my-skills/MySkills";
 import { Burger } from "./layout/sections/menu/burger/Burger";
+import { useState } from "react";
 
 function App() {
+  const [isOpenNav, setIsOpenNav] = useState(false);
+  const [isOpenInfo, setIsOpenInfo] = useState(false);
   return (
     <div className="App">
       <FlexWrapper justify={"space-between"}>
         <Aside />
         <Container>
-          <Burger />
+          <Burger isOpenNav={isOpenNav} />
           <Main />
           <MySkills />
           <Education />
@@ -28,7 +31,7 @@ function App() {
           <ContactInfo />
           <Footer />
         </Container>
-        <Menu menuItems={menuItems} />
+        <Menu isOpenNav={isOpenNav} menuItems={menuItems} />
       </FlexWrapper>
     </div>
   );

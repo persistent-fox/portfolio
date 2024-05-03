@@ -1,26 +1,35 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../../../styles/theme";
 
-interface IBurgerProps {}
+interface IBurgerProps {
+  isOpenNav: boolean;
+}
 
-export const Burger = ({}: IBurgerProps) => {
+export const Burger = ({ isOpenNav }: IBurgerProps) => {
   return (
-    <StyledBurger>
+    <StyledBurger isOpenNav={isOpenNav}>
       <span></span>
     </StyledBurger>
   );
 };
 
-const StyledBurger = styled.div`
+const StyledBurger = styled.div<{ isOpenNav: boolean }>`
+  visibility: hidden;
+  cursor: pointer;
   span {
     position: absolute;
     display: block;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 50px;
     width: 30px;
     height: 2px;
     background-color: ${theme.colors.accent};
     z-index: 1;
+    ${(props) =>
+      props.isOpenNav &&
+      css`
+        background-color: rgba(255, 255, 255, 0);
+      `}
     &:before {
       content: "";
       display: block;
@@ -28,6 +37,11 @@ const StyledBurger = styled.div`
       height: 2px;
       background-color: ${theme.colors.accent};
       transform: translateY(10px);
+      ${(props) =>
+        props.isOpenNav &&
+        css`
+          transform: rotate(-45deg) translateY(0);
+        `}
     }
     &:after {
       content: "";
@@ -36,6 +50,15 @@ const StyledBurger = styled.div`
       height: 2px;
       background-color: ${theme.colors.accent};
       transform: translateY(-10px);
+      ${(props) =>
+        props.isOpenNav &&
+        css`
+          transform: rotate(45deg) translateY(-2px);
+        `}
     }
+  }
+
+  @media ${theme.media.large} {
+    visibility: visible;
   }
 `;

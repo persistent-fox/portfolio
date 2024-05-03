@@ -35,4 +35,10 @@ export const StyledAside = styled.aside`
   padding: 50px 45px 25px 40px;
   background-color: ${theme.colors.primary};
   height: 100%;
+
+  @media ${theme.media.large} {
+    position: fixed;
+    left: 0;
+    transform: translateX(-100%);
+  }
 `;

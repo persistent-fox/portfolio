@@ -29,8 +29,8 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.text.tertiary};
-    font-size: 15px;
+    font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.2;
   }
 `;

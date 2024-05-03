@@ -1,6 +1,5 @@
 import { Button } from "../../../components/button/Button";
 import styled from "styled-components";
-import { TitleSection } from "../../../components/title-section/TitleSection";
 import { Paragraph } from "../../../components/paragraph/Paragraph";
 import srcImg from "./../../../assets/images/photo.webp";
 import { theme } from "../../../styles/theme";
@@ -12,9 +11,9 @@ export const Main = ({}: IMainProps) => {
     <StyledMain>
       <Information>
         <Name>I’m Rayan Adlrdard</Name>
-        <TitleSection fontSize="48px" as="h1">
+        <Title>
           <Highlighted>Front-end</Highlighted> Developer
-        </TitleSection>
+        </Title>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat
           feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc
@@ -42,7 +41,7 @@ export const StyledMain = styled.section`
     url("./../../../assets/images/background.svg") no-repeat center center /
     cover;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 8px 58px 0 58px;
   flex-wrap: wrap;
@@ -52,23 +51,30 @@ export const StyledMain = styled.section`
   ${Paragraph} {
     margin-bottom: 25px;
   }
+
+  @media ${theme.media.large} {
+    padding: 80px 40px 0 40px;
+    gap: 20px;
+  }
 `;
 
 export const Information = styled.div`
-  max-width: 500px;
+  max-width: 700px;
   width: 100%;
-
-  ${TitleSection} {
-    margin-bottom: 18px;
-  }
 `;
 
 export const Name = styled.span`
   display: block;
   color: ${theme.colors.text.tertiary};
-  font-size: 48px;
+  font-size: calc((100vw - 375px) / (1440 - 375) * (48 - 40) + 40px);
   font-weight: 700;
   line-height: 120%;
+  margin-bottom: 10px;
+`;
+
+export const Title = styled.h1`
+  font-size: calc((100vw - 375px) / (1440 - 375) * (48 - 40) + 40px);
+  margin-bottom: 18px;
 `;
 
 export const Highlighted = styled.span`

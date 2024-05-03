@@ -34,7 +34,7 @@ export const StyledSkill = styled.div`
   justify-content: center;
   gap: 15px;
   align-items: center;
-  max-width: 300px;
+  flex-grow: 1;
 
   ${Paragraph} {
     text-align: center;
