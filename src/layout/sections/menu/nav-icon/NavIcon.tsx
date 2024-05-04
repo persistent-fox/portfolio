@@ -31,7 +31,7 @@ export const StyledLinkIcon = styled.a<StyledLinkIconProps>`
   height: 40px;
   border-radius: 50%;
   background-color: ${theme.colors.grey.medium};
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
   color: ${theme.colors.text.dark};
 
   span {
