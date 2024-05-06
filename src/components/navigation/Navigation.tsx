@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavIcon } from "../../layout/sections/menu/nav-icon/NavIcon";
+import { NavIcon } from "../../layout/sections/menu/nav-panel/nav-icon/NavIcon";
 
 interface INavigationProps {
   menuItems: string[];

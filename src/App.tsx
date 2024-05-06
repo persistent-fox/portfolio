@@ -1,5 +1,5 @@
 import "./App.css";
-import { Menu } from "./layout/sections/menu/Menu";
+import { NavPanel } from "./layout/sections/menu/nav-panel/NavPanel";
 import { Aside } from "./layout/sections/aside/Aside";
 import { Main } from "./layout/sections/main/Main";
 import { Education } from "./layout/sections/education/Education";
@@ -11,10 +11,7 @@ import { Portfolio } from "./layout/sections/portfolio/Portfolio";
 import { ContactInfo } from "./layout/sections/contact-info/contactInfo";
 import { Footer } from "./layout/sections/footer/Footer";
 import { MySkills } from "./layout/sections/my-skills/MySkills";
-import { Burger } from "./layout/sections/menu/burger/Burger";
-import { useState } from "react";
-import { MobileAside } from "./components/mobile-aside/MobileAside";
-import { MobileMenu } from "./components/mobile-menu/MobileMenu";
+import { Menu } from "./layout/sections/menu/Menu";
 
 function App() {
   return (
@@ -22,8 +19,6 @@ function App() {
       <FlexWrapper justify={"space-between"}>
         <Aside />
         <Container>
-          {/*<MobileAside />*/}
-          <MobileMenu />
           <Main />
           <MySkills />
           <Education />
@@ -32,7 +27,7 @@ function App() {
           <ContactInfo />
           <Footer />
         </Container>
-        <Menu menuItems={menuItems} />
+        <Menu />
       </FlexWrapper>
     </div>
   );

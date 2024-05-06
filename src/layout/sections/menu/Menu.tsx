@@ -1,39 +1,36 @@
-import styled from "styled-components";
-import { Navigation } from "../../../components/navigation/Navigation";
-import { NavIcon } from "./nav-icon/NavIcon";
-import { theme } from "../../../styles/theme";
+import { Burger } from "./burger/Burger";
+import { menuItems } from "../../../mock/data";
+import React, { useState } from "react";
+import { NavPanel } from "./nav-panel/NavPanel";
+import { S } from "./Menu_Styles";
 
-interface INavigationProps {
-  menuItems: string[];
-}
+interface IMobileMenuProps {}
 
-export const Menu = ({ menuItems }: INavigationProps) => {
+export const Menu = ({}: IMobileMenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakPoint = 991;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  const onClick = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
-    <StyledMenu>
-      <NavIcon width="30px" height="30px" viewBox="0 0 30 30" iconId="theme" />
-      <Navigation menuItems={menuItems} />
-    </StyledMenu>
+    <S.MobileMenu>
+      {width < breakPoint && (
+        <>
+          <Burger onClick={onClick} isOpen={isOpen} />
+          <S.Layout isOpen={isOpen} onClick={onClick} />
+        </>
+      )}
+      <NavPanel menuItems={menuItems} onClick={onClick} isOpen={isOpen} />
+    </S.MobileMenu>
   );
 };
-
-export const StyledMenu = styled.aside`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 100px;
-  padding: 50px 10px;
-  background: ${theme.colors.grey.light};
-  box-shadow: 4px 0 10px 0 rgba(47, 122, 249, 0.1);
-  min-width: 108px;
-  height: 100vh;
-
-  a {
-    color: ${theme.colors.text.dark};
-  }
-
-  @media ${theme.media.large} {
-    position: fixed;
-    right: 0;
-    transform: translateX(100%);
-  }
-`;
