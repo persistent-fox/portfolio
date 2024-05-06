@@ -94,15 +94,20 @@ const ImageWrapper = styled.div`
   border-top-right-radius: 60px;
   overflow: hidden;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+  }
+
   &:hover {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      backdrop-filter: blur(4px);
+      opacity: 1;
     }
 
     ${StyledButton} {
@@ -116,5 +121,14 @@ const ImageWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     visibility: hidden;
+  }
+
+  @media ${theme.media.medium} {
+    &::before {
+      opacity: 1;
+    }
+    ${StyledButton} {
+      visibility: visible;
+    }
   }
 `;
