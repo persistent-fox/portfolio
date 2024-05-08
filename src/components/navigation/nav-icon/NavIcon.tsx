@@ -1,12 +1,13 @@
-import { Icon } from "../../../../../components/icon/Icon";
+import { Icon } from "../../icon/Icon";
 import styled, { css } from "styled-components";
-import { theme } from "../../../../../styles/theme";
+import { theme } from "../../../styles/theme";
 
 interface INavIconProps {
   iconId: string;
   width?: string;
   height?: string;
   viewBox?: string;
+  onClick?: () => void;
 }
 
 export const NavIcon = ({ iconId, width, height, viewBox }: INavIconProps) => {

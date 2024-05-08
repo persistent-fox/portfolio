@@ -1,52 +1,28 @@
 import { TitleSection } from "../../../components/TitleSection";
-import styled from "styled-components";
 import { TimeLineCard } from "../../../components/time-line-card/TimeLineCard";
 import { Divider } from "../../../components/Divider";
 import { education } from "../../../mock/data";
-import { Fragment } from "react";
-import { theme } from "../../../styles/theme";
+import React, { Fragment } from "react";
+import { S } from "./Education_Styles";
 
 interface IEducationProps {}
 
-export const Education = ({}: IEducationProps) => {
+export const Education: React.FC = ({}: IEducationProps) => {
   return (
-    <StyledEducation>
+    <S.Education>
       <TitleSection>Education</TitleSection>
       <p>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. lorem ipsum
       </p>
-      <Info>
+      <S.Info>
         {education.map((item, index) => (
           <Fragment key={item.key}>
             <TimeLineCard {...item} />
             {index !== education.length - 1 && <Divider />}
           </Fragment>
         ))}
-      </Info>
-    </StyledEducation>
+      </S.Info>
+    </S.Education>
   );
 };
-
-export const StyledEducation = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  padding: 35px 0;
-
-  & > p {
-    max-width: 438px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-`;
-
-export const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  padding: 40px 20px;
-  background-color: ${theme.colors.primary};
-`;

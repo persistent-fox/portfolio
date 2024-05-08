@@ -28,6 +28,5 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-kerning: none;
     font-feature-settings: "calt" off;
-    
     ${font({ Fmin: 15, Fmax: 20 })}
 `;

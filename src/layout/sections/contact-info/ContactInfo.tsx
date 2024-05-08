@@ -1,15 +1,19 @@
-import { Form, StyledForm } from "./form/Form";
+import { Form } from "./form/Form";
 import { InfoCard } from "./info-card/InfoCard";
 import { contactInfo, placeOfResidence } from "../../../mock/data";
-import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { TitleSection } from "../../../components/TitleSection";
 
+import { S } from "./ContactInfo_Styles";
+import React from "react";
+
 interface IContactInfoProps {}
 
-export const ContactInfo = ({}: IContactInfoProps) => {
+export const ContactInfo: React.FC<
+  IContactInfoProps
+> = ({}: IContactInfoProps) => {
   return (
-    <StyledContactInfo>
+    <S.ContactInfo>
       <FlexWrapper
         flex={"1 1 auto"}
         gap={"50px"}
@@ -32,17 +36,6 @@ export const ContactInfo = ({}: IContactInfoProps) => {
           <InfoCard iconId={"mail"} infoData={contactInfo} />
         </FlexWrapper>
       </FlexWrapper>
-    </StyledContactInfo>
+    </S.ContactInfo>
   );
 };
-
-export const StyledContactInfo = styled.section`
-  display: flex;
-  gap: 30px;
-  padding: 35px 0;
-  flex-wrap: wrap;
-
-  ${StyledForm} {
-    flex-grow: 1;
-  }
-`;

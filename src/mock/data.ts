@@ -122,3 +122,65 @@ export const contactInfo = [
   ["Skype:", "@yourusername"],
   ["Telegram:", "@yourusername"],
 ];
+
+export const MySkillsData = [
+  {
+    iconId: "html5",
+    title: "html 5",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 50 50",
+  },
+  {
+    iconId: "css3",
+    title: "css 3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 50 50",
+  },
+  {
+    iconId: "react",
+    title: "react",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 50 50",
+  },
+  {
+    iconId: "typescript",
+    title: "typescript",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 50 50",
+  },
+  {
+    iconId: "styled-components",
+    title: "styled components",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 50 50",
+  },
+  {
+    iconId: "git",
+    title: "git",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim",
+    viewBox: "0 0 92 92",
+  },
+];
+
+export const ProjectsData = [
+  {
+    id: 1,
+    title: "Project Tile goes here",
+    description:
+      "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    skills: ["HTML", "JavaScript", "SASS", "React"],
+  },
+  {
+    id: 2,
+    title: "Project Tile goes here",
+    description:
+      "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    skills: ["HTML", "JavaScript", "SASS", "React"],
+  },
+];

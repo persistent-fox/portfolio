@@ -1,9 +1,10 @@
 import { extraSkills } from "../../../../mock/data";
 import { ProgressBar } from "../../../../components/progress-bar/ProgressBar";
 import { List } from "../../../../components/list/List";
-import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { TitleCard } from "../../../../components/TitleCard";
+import { S } from "./../Aside_Styles";
+import React from "react";
 
 interface ISkillsProps {
   skills: string[][] | string[];
@@ -11,9 +12,13 @@ interface ISkillsProps {
   list?: boolean;
 }
 
-export const Skills = ({ skills, title, list }: ISkillsProps) => {
+export const Skills: React.FC<ISkillsProps> = ({
+  skills,
+  title,
+  list,
+}: ISkillsProps) => {
   return (
-    <StyledSkills>
+    <S.Skills>
       <TitleCard>{title}</TitleCard>
       {list ? (
         <List listItems={extraSkills} />
@@ -26,12 +31,6 @@ export const Skills = ({ skills, title, list }: ISkillsProps) => {
           ))}
         </FlexWrapper>
       )}
-    </StyledSkills>
+    </S.Skills>
   );
 };
-
-export const StyledSkills = styled.section`
-  ${TitleCard} {
-    margin-bottom: 15px;
-  }
-`;

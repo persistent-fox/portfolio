@@ -1,44 +1,36 @@
-import styled from "styled-components";
-import { Button } from "../../../components/button/Button";
-import { Divider } from "../../../components/Divider";
-import { languages, skills, socials } from "../../../mock/data";
-import { Skills } from "./skills/Skills";
-import { MainInfo } from "./main-info/MainInfo";
-import { theme } from "../../../styles/theme";
+import React, { useEffect, useState } from "react";
+import { UserPanel } from "./user-panel/UserPanel";
+import { S } from "./Aside_Styles";
+import { Burger } from "../menu/burger/Burger";
+import { Layout } from "../../../components/Layout";
 
 interface IAsideProps {}
 
-export const Aside = ({}: IAsideProps) => {
+export const Aside: React.FC<IAsideProps> = ({}: IAsideProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakPoint = 991;
+
+  const onClick = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
-    <StyledAside>
-      <MainInfo socials={socials} />
-      <Divider />
-      <Skills title="Languages" skills={languages} />
-      <Divider />
-      <Skills title="Skills" skills={skills} />
-      <Divider />
-      <Skills list title="Extra Skills" skills={skills} />
-      <Divider />
-      <Button width="14" height="17" viewBox="0 0 14 17" iconId="download">
-        Download cv
-      </Button>
-    </StyledAside>
+    <S.Aside>
+      {width < breakPoint && (
+        <>
+          <Burger isOpen={isOpen} onClick={onClick} />
+          <Layout isOpen={isOpen} onClick={onClick} />
+        </>
+      )}
+      <UserPanel isOpen={isOpen} />
+    </S.Aside>
   );
 };
-
-export const StyledAside = styled.aside`
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  max-width: 375px;
-  width: 100%;
-  padding: 50px 45px 25px 40px;
-  background-color: ${theme.colors.primary};
-  height: 100%;
-
-  @media ${theme.media.large} {
-    position: fixed;
-    left: 0;
-    transform: translateX(-100%);
-  }
-`;

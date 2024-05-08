@@ -1,13 +1,13 @@
 import { TextField } from "../../../../components/text-field/TextField";
-import styled from "styled-components";
 import { Button } from "../../../../components/button/Button";
-import { theme } from "../../../../styles/theme";
+import { S } from "./../ContactInfo_Styles";
+import React from "react";
 
 interface IFormProps {}
 
-export const Form = ({}: IFormProps) => {
+export const Form: React.FC<IFormProps> = ({}: IFormProps) => {
   return (
-    <StyledForm>
+    <S.Form>
       <TextField
         inputId={"name"}
         placeholder={"Enter your name"}
@@ -37,22 +37,6 @@ export const Form = ({}: IFormProps) => {
       <Button primary fontWeight={"600"}>
         send message
       </Button>
-    </StyledForm>
+    </S.Form>
   );
 };
-
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 25px;
-  background-color: ${theme.colors.primary};
-  padding: 25px;
-  width: 100%;
-  min-width: 480px;
-
-  @media ${theme.media.small} {
-    min-width: 0;
-    padding: 15px;
-  }
-`;
