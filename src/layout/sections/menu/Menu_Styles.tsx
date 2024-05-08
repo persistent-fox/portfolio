@@ -1,22 +1,21 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-// NavPanel
+// Menu
 
-type NavPanelProps = {
-  isOpen: boolean;
-};
+type MenuProps = {};
 
-const NavPanel = styled.aside<NavPanelProps>`
+const Menu = styled.aside<MenuProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 100px;
+  flex-grow: 1;
   padding: 50px 10px;
   background: ${theme.colors.grey.light};
   box-shadow: 4px 0 10px 0 rgba(47, 122, 249, 0.1);
-  min-width: 108px;
   max-width: 108px;
+  width: 100%;
   height: 100vh;
 
   a {
@@ -25,98 +24,100 @@ const NavPanel = styled.aside<NavPanelProps>`
 
   @media ${theme.media.large} {
     position: fixed;
-    right: 0;
-    transform: translateX(100%);
-    z-index: 10;
-    ${(props) =>
-      props.isOpen &&
-      css`
-        transform: translateX(0);
-      `}
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    height: 80px;
+    padding: 20px 15px;
+    max-width: none;
   }
 `;
 
-// Burger
+// Menu navigation
 
-const Burger = styled.button<{ isOpen: boolean }>`
-  position: fixed;
-  top: 20px;
-  left: 45px;
-  width: 35px;
-  height: 35px;
-  z-index: 5;
+const Navigation = styled.nav`
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+  }
+  @media ${theme.media.large} {
+    ul {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+`;
+
+// Navigation icon
+
+type LinkIconProps = {
+  social?: boolean;
+};
+
+const LinkIcon = styled.a<LinkIconProps>`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  color: ${theme.colors.tertiary};
-  background-image: linear-gradient(
-    to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
-  );
+  background-color: ${theme.colors.grey.medium};
+  transition: color 0.3s ease-in-out;
+  color: ${theme.colors.text.dark};
+
   span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: ${theme.colors.tertiary};
-    z-index: 1;
-    ${(props) =>
-      props.isOpen &&
-      css`
-        background-color: rgba(255, 255, 255, 0);
-      `}
-    &:before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: ${theme.colors.tertiary};
-      transform: translateY(6px);
-      ${(props) =>
-        props.isOpen &&
-        css`
-          transform: rotate(-45deg) translateY(0);
-        `}
-    }
+    position: absolute;
+    display: inline-block;
+    padding: 5px 15px;
+    left: 50%;
+    top: -38px;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    visibility: hidden;
+    color: ${theme.colors.text.tertiary};
+    background: ${theme.colors.grey.medium};
+    border-radius: 5px;
     &:after {
       content: "";
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: ${theme.colors.tertiary};
-      transform: translateY(-6px);
-      ${(props) =>
-        props.isOpen &&
-        css`
-          transform: rotate(45deg) translateY(-2px);
-        `}
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px;
+      border-style: solid;
+      border-color: ${theme.colors.grey.medium} transparent transparent
+        transparent;
     }
   }
-`;
 
-const NavArrow = styled.div`
-  position: fixed;
-  top: 20px;
-  right: 45px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  color: ${theme.colors.tertiary};
-  background-image: linear-gradient(
-    to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
-  );
-  cursor: pointer;
+  &:hover {
+    color: ${theme.colors.tertiary};
+    background-image: linear-gradient(
+      to right,
+      ${theme.colors.secondary},
+      ${theme.colors.accent}
+    );
+    span {
+      visibility: visible;
+    }
+  }
+
+  @media ${theme.media.small} {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const S = {
-  NavPanel,
-  Burger,
-  NavArrow,
+  Menu,
+  Navigation,
+  LinkIcon,
 };

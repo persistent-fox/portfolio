@@ -1,14 +1,18 @@
-import styled from "styled-components";
 import { NavIcon } from "./nav-icon/NavIcon";
+import { S } from "./../Menu_Styles";
+import React from "react";
 
 interface INavigationProps {
   menuItems: string[];
   onClick?: () => void;
 }
 
-export const Navigation = ({ menuItems, onClick }: INavigationProps) => {
+export const Navigation: React.FC<INavigationProps> = ({
+  menuItems,
+  onClick,
+}: INavigationProps) => {
   return (
-    <StyledMenu>
+    <S.Navigation>
       <ul role={"menu"}>
         {menuItems.map((item) => (
           <li onClick={onClick} role={"menuitem"} key={item}>
@@ -16,16 +20,6 @@ export const Navigation = ({ menuItems, onClick }: INavigationProps) => {
           </li>
         ))}
       </ul>
-    </StyledMenu>
+    </S.Navigation>
   );
 };
-
-export const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 44px;
-  }
-`;

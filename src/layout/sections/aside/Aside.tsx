@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { UserPanel } from "./user-panel/UserPanel";
 import { S } from "./Aside_Styles";
-import { Burger } from "../menu/burger/Burger";
 import { Layout } from "../../../components/Layout";
+import { Icon } from "../../../components/icon/Icon";
 
 interface IAsideProps {}
 
@@ -26,11 +26,18 @@ export const Aside: React.FC<IAsideProps> = ({}: IAsideProps) => {
     <S.Aside>
       {width < breakPoint && (
         <>
-          <Burger isOpen={isOpen} onClick={onClick} />
+          <S.InfoArrow onClick={onClick}>
+            <Icon
+              viewBox={"0 0 448 512"}
+              width={"25px"}
+              height={"20px"}
+              iconId={"menu-arrow"}
+            />
+          </S.InfoArrow>
           <Layout isOpen={isOpen} onClick={onClick} />
         </>
       )}
-      <UserPanel isOpen={isOpen} />
+      <UserPanel isOpen={isOpen} onClick={onClick} />
     </S.Aside>
   );
 };

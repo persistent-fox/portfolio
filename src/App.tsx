@@ -10,6 +10,7 @@ import { ContactInfo } from "./layout/sections/contact-info/ContactInfo";
 import { Footer } from "./layout/sections/footer/Footer";
 import { MySkills } from "./layout/sections/my-skills/MySkills";
 import { Menu } from "./layout/sections/menu/Menu";
+import { menuItems } from "./mock/data";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <ContactInfo />
           <Footer />
         </Container>
-        <Menu />
+        <Menu menuItems={menuItems} />
       </FlexWrapper>
     </div>
   );
