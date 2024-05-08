@@ -37,5 +37,6 @@ export const theme = {
     large: "screen and (max-width: 991px)",
     medium: "screen and (max-width: 768px)",
     small: "screen and (max-width: 576px)",
+    hover: "screen and (hover: hover)",
   },
 };

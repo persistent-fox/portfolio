@@ -1,5 +1,8 @@
 import { Button } from "../../../components/button/Button";
-import srcImg from "./../../../assets/images/photo.webp";
+import srcImg from "./../../../assets/images/photo.png";
+import srcImg2x from "./../../../assets/images/photo@2x.png";
+import srcImgWebP from "./../../../assets/images/photo.webp";
+import srcImgWebP2x from "./../../../assets/images/photo2x.webp";
 import { S } from "./Main_Styles";
 interface IMainProps {}
 
@@ -26,7 +29,13 @@ export const Main = ({}: IMainProps) => {
           Hire me
         </Button>
       </S.Information>
-      <img src={srcImg} alt="photo" />
+      <picture>
+        <source
+          srcSet={`${srcImgWebP2x} 2x, ${srcImgWebP} 1x`}
+          type="image/webp"
+        />
+        <img src={srcImg} srcSet={`${srcImg2x} 2x`} alt="photo" />
+      </picture>
     </S.Main>
   );
 };

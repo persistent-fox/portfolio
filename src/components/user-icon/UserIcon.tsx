@@ -8,12 +8,12 @@ interface IUserIconProps {
 export const UserIcon = ({ srcImg }: IUserIconProps) => {
   return (
     <StyledUserIcon>
-      <img src={srcImg} alt="" />
+      <img src={srcImg} alt="user-icon" />
     </StyledUserIcon>
   );
 };
 
-export const StyledUserIcon = styled.div`
+export const StyledUserIcon = styled.picture`
   position: relative;
   width: 150px;
   height: 150px;
