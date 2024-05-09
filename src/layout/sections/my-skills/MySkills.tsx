@@ -22,7 +22,7 @@ export const MySkills = ({}: IMySkillsProps) => {
         gap={"20px"}
       >
         {MySkillsData.map((item) => (
-          <Fade cascade={true} damping={0.2}>
+          <Fade key={item.iconId} cascade={true} damping={0.2}>
             <Skill
               key={item.iconId}
               title={item.title}

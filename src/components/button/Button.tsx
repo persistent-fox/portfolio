@@ -65,9 +65,17 @@ export const StyledButton = styled.button<StyledButtonProps>`
   );
   border: none;
   cursor: pointer;
+  transition: 0.5s all;
 
   &:active {
     transform: scale(0.95);
+  }
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      ${theme.colors.accent},
+      ${theme.colors.secondary}
+    );
   }
 
   // primary button
