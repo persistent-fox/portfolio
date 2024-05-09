@@ -60,6 +60,7 @@ const Skills = styled.section`
 // };
 
 const Aside = styled.aside`
+  position: relative;
   max-width: 375px;
   width: 100%;
   flex-grow: 1;

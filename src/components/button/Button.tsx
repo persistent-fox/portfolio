@@ -12,6 +12,7 @@ interface IButtonProps {
   iconId?: string;
   color?: string;
   fontWeight?: string;
+  type?: "submit" | "button" | "reset" | undefined;
 }
 
 export const Button = ({
@@ -23,9 +24,15 @@ export const Button = ({
   iconId,
   color,
   fontWeight,
+  type = "submit",
 }: IButtonProps) => {
   return (
-    <StyledButton fontWeight={fontWeight} color={color} primary={primary}>
+    <StyledButton
+      type={type}
+      fontWeight={fontWeight}
+      color={color}
+      primary={primary}
+    >
       {children}
       {iconId && (
         <Icon width={width} height={height} viewBox={viewBox} iconId={iconId} />
@@ -39,6 +46,7 @@ type StyledButtonProps = {
   fontSize?: string;
   color?: string;
   fontWeight?: string;
+  type?: string;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`

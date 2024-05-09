@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 const Footer = styled.footer`
+  position: relative;
   padding: 10px;
   margin-top: 35px;
   display: flex;

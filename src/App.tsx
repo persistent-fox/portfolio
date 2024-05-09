@@ -11,10 +11,12 @@ import { Footer } from "./layout/sections/footer/Footer";
 import { MySkills } from "./layout/sections/my-skills/MySkills";
 import { Menu } from "./layout/sections/menu/Menu";
 import { menuItems } from "./mock/data";
+import { Particle } from "./components/particle/Particle";
 
 function App() {
   return (
     <div className="App">
+      <Particle />
       <FlexWrapper justify={"space-between"}>
         <Aside />
         <Container>

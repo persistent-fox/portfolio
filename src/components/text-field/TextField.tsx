@@ -10,6 +10,7 @@ interface IInputProps {
   textarea?: boolean;
   placeholder?: string;
   inputId: string;
+  name: string;
 }
 
 export const TextField = ({
@@ -19,6 +20,7 @@ export const TextField = ({
   textarea = false,
   required = false,
   placeholder,
+  name,
 }: IInputProps) => {
   return (
     <StyledTextField>
@@ -33,6 +35,7 @@ export const TextField = ({
           id={inputId}
           placeholder={placeholder || ""}
           rows={20}
+          name={name}
         ></Textarea>
       ) : (
         <Input id={inputId} placeholder={placeholder || ""} type={type} />

@@ -46,14 +46,11 @@ const Name = styled.span`
 const Title = styled.h1`
   margin-bottom: 18px;
   ${font({
-    color: theme.colors.text.tertiary,
     weight: 700,
     Fmin: 40,
     Fmax: 48,
+    color: theme.colors.text.tertiary,
   })}
-  span {
-    visibility: hidden;
-  }
 `;
 
 const Highlighted = styled.span`

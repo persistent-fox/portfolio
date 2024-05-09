@@ -6,6 +6,7 @@ import { theme } from "../../../styles/theme";
 type MenuProps = {};
 
 const Menu = styled.aside<MenuProps>`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

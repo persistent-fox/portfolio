@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 const Education = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

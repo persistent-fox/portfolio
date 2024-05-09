@@ -1,17 +1,14 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { theme } from "../../../styles/theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledButton } from "../../../components/button/Button";
-import { font } from "../../../styles/Common";
 
 // Project
 
 const Project = styled.article`
   display: flex;
   flex-direction: column;
-  width: 45%;
-  min-width: 380px;
   background-color: ${theme.colors.primary};
   border-radius: 0 60px 0 60px;
 
@@ -105,6 +102,7 @@ const ImageWrapper = styled.div`
 // Portfolio
 
 const Portfolio = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,26 +116,8 @@ const Portfolio = styled.section`
   }
 `;
 
-const Slide = styled.span`
-  width: 14px;
-  height: 14px;
-  background-color: ${theme.colors.grey.dark};
-  border-radius: 50%;
-  cursor: pointer;
-  &.active {
-    width: 30px;
-    border-radius: 8px;
-    background-image: linear-gradient(
-      to right,
-      ${theme.colors.secondary},
-      ${theme.colors.accent}
-    );
-  }
-`;
-
 export const S = {
   Portfolio,
-  Slide,
   ImageWrapper,
   Project,
   Info,

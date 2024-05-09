@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Skill } from "./skill/Skill";
 import { MySkillsData } from "../../../mock/data";
 import { S } from "./MySkills_Styles";
+import { Fade } from "react-awesome-reveal";
 
 interface IMySkillsProps {}
 
@@ -21,13 +22,15 @@ export const MySkills = ({}: IMySkillsProps) => {
         gap={"20px"}
       >
         {MySkillsData.map((item) => (
-          <Skill
-            key={item.iconId}
-            title={item.title}
-            description={item.description}
-            iconId={item.iconId}
-            viewBox={item.viewBox}
-          />
+          <Fade cascade={true} damping={0.2}>
+            <Skill
+              key={item.iconId}
+              title={item.title}
+              description={item.description}
+              iconId={item.iconId}
+              viewBox={item.viewBox}
+            />
+          </Fade>
         ))}
       </FlexWrapper>
     </S.MySkills>

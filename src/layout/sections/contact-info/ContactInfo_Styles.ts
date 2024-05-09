@@ -46,6 +46,7 @@ const Form = styled.form`
 `;
 
 const ContactInfo = styled.section`
+  position: relative;
   display: flex;
   gap: 30px;
   padding: 35px 0;

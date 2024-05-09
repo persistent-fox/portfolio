@@ -6,8 +6,8 @@ import { S } from "./Portfolio_Styles";
 import { ProjectsData, tabs } from "../../../mock/data";
 import React, { useEffect, useState } from "react";
 import { TabMenu } from "../../../components/tab-menu/TabMenu";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface IPortfolioProps {}
 
@@ -52,20 +52,26 @@ export const Portfolio: React.FC<IPortfolioProps> = ({}: IPortfolioProps) => {
         {/*  ))}*/}
         {/*/>*/}
 
-        {filtredProjects.map((item) => (
-          <Project
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            srcImg={srcImg}
-            skills={item.skills}
-          />
-        ))}
-      </FlexWrapper>
-      <FlexWrapper gap={"10px"}>
-        <S.Slide />
-        <S.Slide className={"active"} />
-        <S.Slide />
+        <AnimatePresence>
+          {filtredProjects.map((item) => (
+            <motion.div
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              style={{ width: "45%", minWidth: "380px" }}
+              key={item.id}
+            >
+              <Project
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                srcImg={srcImg}
+                skills={item.skills}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </FlexWrapper>
     </S.Portfolio>
   );
