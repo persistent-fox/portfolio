@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { theme } from "../../../styles/theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledButton } from "../../../components/button/Button";
+import { font } from "../../../styles/Common";
 
 // Project
 

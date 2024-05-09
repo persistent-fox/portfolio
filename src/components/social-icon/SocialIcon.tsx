@@ -51,7 +51,9 @@ export const StyledSocialIcon = styled.a<StyledSocialIconProps>`
     ${theme.colors.accent}
   );
   transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: translateY(-15%);
+  @media ${theme.media.hover} {
+    &:hover {
+      transform: translateY(-15%);
+    }
   }
 `;

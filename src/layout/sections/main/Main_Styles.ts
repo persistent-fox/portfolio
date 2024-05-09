@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
+import { font } from "../../../styles/Common";
 
 const Main = styled.section`
   position: relative;
@@ -33,17 +34,26 @@ const Information = styled.div`
 
 const Name = styled.span`
   display: block;
-  color: ${theme.colors.text.tertiary};
-  font-size: calc((100vw - 375px) / (1440 - 375) * (48 - 40) + 40px);
-  font-weight: 700;
-  line-height: 120%;
   margin-bottom: 10px;
+  ${font({
+    color: theme.colors.text.tertiary,
+    weight: 700,
+    Fmin: 40,
+    Fmax: 48,
+  })}
 `;
 
 const Title = styled.h1`
-  font-size: calc((100vw - 375px) / (1440 - 375) * (48 - 40) + 40px);
   margin-bottom: 18px;
-  color: ${theme.colors.text.tertiary};
+  ${font({
+    color: theme.colors.text.tertiary,
+    weight: 700,
+    Fmin: 40,
+    Fmax: 48,
+  })}
+  span {
+    visibility: hidden;
+  }
 `;
 
 const Highlighted = styled.span`

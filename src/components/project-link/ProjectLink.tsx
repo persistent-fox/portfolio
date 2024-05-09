@@ -1,13 +1,17 @@
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import React from "react";
 
 interface IProjectLinkProps {
   titleLink: string;
   iconId: string;
 }
 
-export const ProjectLink = ({ titleLink, iconId }: IProjectLinkProps) => {
+export const ProjectLink: React.FC<IProjectLinkProps> = ({
+  titleLink,
+  iconId,
+}: IProjectLinkProps) => {
   return (
     <StyledProjectLink href={"#"}>
       <Icon
@@ -29,7 +33,9 @@ export const StyledProjectLink = styled.a`
   text-decoration-line: underline;
   transition: all 0.3s;
 
-  &:hover {
-    color: ${theme.colors.text.tertiary};
+  @media ${theme.media.hover} {
+    &:hover {
+      color: ${theme.colors.text.tertiary};
+    }
   }
 `;

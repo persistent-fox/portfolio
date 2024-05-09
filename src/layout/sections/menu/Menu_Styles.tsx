@@ -98,15 +98,17 @@ const LinkIcon = styled.a<LinkIconProps>`
     }
   }
 
-  &:hover {
-    color: ${theme.colors.tertiary};
-    background-image: linear-gradient(
-      to right,
-      ${theme.colors.secondary},
-      ${theme.colors.accent}
-    );
-    span {
-      visibility: visible;
+  @media ${theme.media.hover} {
+    &:hover {
+      color: ${theme.colors.tertiary};
+      background-image: linear-gradient(
+        to right,
+        ${theme.colors.secondary},
+        ${theme.colors.accent}
+      );
+      span {
+        visibility: visible;
+      }
     }
   }
 

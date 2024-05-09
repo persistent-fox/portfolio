@@ -1,3 +1,4 @@
+import Typewriter from "typewriter-effect";
 import { Button } from "../../../components/button/Button";
 import srcImg from "./../../../assets/images/photo.png";
 import srcImg2x from "./../../../assets/images/photo@2x.png";
@@ -10,7 +11,15 @@ export const Main = ({}: IMainProps) => {
   return (
     <S.Main>
       <S.Information>
-        <S.Name>I’m Margarita Abdullina</S.Name>
+        <S.Name>
+          <Typewriter
+            options={{
+              strings: ["I’m Margarita Abdullina"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </S.Name>
         <S.Title>
           <S.Highlighted>Front-end</S.Highlighted> Developer
         </S.Title>

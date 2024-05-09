@@ -175,6 +175,7 @@ export const ProjectsData = [
     description:
       "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     skills: ["HTML", "JavaScript", "SASS", "React"],
+    status: "react",
   },
   {
     id: 2,
@@ -182,5 +183,41 @@ export const ProjectsData = [
     description:
       "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     skills: ["HTML", "JavaScript", "SASS", "React"],
+    status: "spa",
+  },
+  {
+    id: 3,
+    title: "Project Tile goes here",
+    description:
+      "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    skills: ["HTML", "JavaScript", "SASS", "React"],
+    status: "spa",
+  },
+  {
+    id: 4,
+    title: "Project Tile goes here",
+    description:
+      "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    skills: ["HTML", "JavaScript", "SASS", "React"],
+    status: "react",
+  },
+];
+
+export const tabs = [
+  {
+    title: "All",
+    status: "all",
+  },
+  {
+    title: "Landing Page",
+    status: "landing page",
+  },
+  {
+    title: "React",
+    status: "react",
+  },
+  {
+    title: "SPA",
+    status: "spa",
   },
 ];
