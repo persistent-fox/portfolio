@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Icon } from "../icon/Icon";
 import { FlexWrapper } from "../FlexWrapper";
-import { theme } from "../../styles/theme";
 
 interface IInputProps {
   type?: "text" | "password" | "email";
@@ -24,7 +22,7 @@ export const TextField = ({
 }: IInputProps) => {
   return (
     <StyledTextField>
-      <FlexWrapper gap={"10px"}>
+      <FlexWrapper align-items={"flex-start"} gap={"10px"}>
         <Label htmlFor={inputId}>
           <span>{label}</span>
           {required && <span>*</span>}
@@ -55,14 +53,13 @@ export const Label = styled.label`
   align-items: center;
   gap: 5px;
   span + span {
-    color: ${theme.colors.errors};
+    color: ${(props) => props.theme.colors.errors};
     font-weight: 700;
   }
 `;
 
 export const Input = styled.input`
-  background: ${theme.colors.grey.medium};
-  font-size: 18px;
+  background: ${(props) => props.theme.colors.grey.medium};
   border: none;
   padding: 16px 20px;
   width: 100%;
@@ -70,11 +67,11 @@ export const Input = styled.input`
   font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
   font-weight: 400;
   line-height: 1.2;
-  color: ${theme.colors.text.dark};
+  color: ${(props) => props.theme.colors.text.dark};
   border-radius: 5px;
 
   &:focus-visible {
-    outline: 1px solid ${theme.colors.text.dark};
+    outline: 1px solid ${(props) => props.theme.colors.text.dark};
   }
 
   &::placeholder {
@@ -88,7 +85,7 @@ export const Input = styled.input`
 
 export const Textarea = styled.textarea`
   resize: none;
-  background: ${theme.colors.grey.medium};
+  background: ${(props) => props.theme.colors.grey.medium};
   border: none;
   padding: 10px 20px;
   width: 100%;
@@ -97,10 +94,10 @@ export const Textarea = styled.textarea`
   font-size: calc((100vw - 375px) / (1920 - 375) * (20 - 15) + 15px);
   font-weight: 400;
   line-height: 1.2;
-  color: ${theme.colors.text.dark};
+  color: ${(props) => props.theme.colors.text.dark};
   border-radius: 5px;
   &:focus-visible {
-    outline: 1px solid ${theme.colors.text.dark};
+    outline: 1px solid ${(props) => props.theme.colors.text.dark};
   }
   &::placeholder {
     font-family: "Inter", sans-serif;

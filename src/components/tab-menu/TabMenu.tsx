@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { theme } from "../../styles/theme";
 
 interface ITabMenuProps {
   tabs: Array<Record<string, string>>;
@@ -39,11 +38,11 @@ type TabProps = {
 const Tab = styled.button<TabProps>`
   position: relative;
   cursor: pointer;
-
+  color: ${(props) => props.theme.colors.text.dark};
   ${(props) =>
     props.active &&
     css`
-      color: ${theme.colors.text.tertiary};
+      color: ${(props) => props.theme.colors.text.tertiary};
 
       &:before {
         content: "";
@@ -53,10 +52,10 @@ const Tab = styled.button<TabProps>`
         height: 6px;
         background-image: linear-gradient(
           to right,
-          ${theme.colors.secondary},
-          ${theme.colors.accent}
+          ${(props) => props.theme.colors.secondary},
+          ${(props) => props.theme.colors.accent}
         );
         z-index: -1;
       }
-    `}
+    `};
 `;

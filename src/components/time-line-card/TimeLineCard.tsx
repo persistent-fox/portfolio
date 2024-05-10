@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
 import { TitleCard } from "../TitleCard";
 
 interface ITimeLineCardProps {
@@ -61,7 +60,7 @@ export const Place = styled.div`
   margin-bottom: 20px;
   max-width: fit-content;
   &:first-child {
-    color: ${theme.colors.text.tertiary};
+    color: ${(props) => props.theme.colors.text.tertiary};
     font-kerning: none;
     font-feature-settings: "calt" off;
     font-size: 15px;
@@ -71,7 +70,7 @@ export const Place = styled.div`
   }
 
   &:last-child {
-    color: ${theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.tertiary};
     font-size: 10px;
     font-weight: 400;
     line-height: 100%;
@@ -79,8 +78,8 @@ export const Place = styled.div`
     border-radius: 1px;
     background-image: linear-gradient(
       to right,
-      ${theme.colors.secondary},
-      ${theme.colors.accent}
+      ${(props) => props.theme.colors.secondary},
+      ${(props) => props.theme.colors.accent}
     );
   }
 `;

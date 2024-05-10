@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/theme";
 
 const MySkills = styled.section`
   display: flex;
@@ -30,10 +29,11 @@ const Skill = styled.div`
 `;
 
 const Frame = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${theme.colors.tertiary};
+  color: ${(props) => props.theme.colors.tertiary};
   width: 80px;
   height: 80px;
   margin-bottom: 45px;
@@ -44,8 +44,8 @@ const Frame = styled.div`
     height: 80px;
     background-image: linear-gradient(
       to right,
-      ${theme.colors.secondary},
-      ${theme.colors.accent}
+      ${(props) => props.theme.colors.secondary},
+      ${(props) => props.theme.colors.accent}
     );
     transform: rotate(45deg);
     z-index: -1;

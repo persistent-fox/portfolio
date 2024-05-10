@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/theme";
 import { font } from "../../../styles/Common";
 
 const Main = styled.section`
   position: relative;
-  min-height: 468px;
-  background: ${theme.colors.primary}
-    url("./../../../assets/images/background.svg") no-repeat center center /
+  background: ${(props) => props.theme.colors.primary}
+    url("./../../../assets/images/background.png") no-repeat center center /
     cover;
   display: flex;
   justify-content: center;
@@ -21,7 +19,7 @@ const Main = styled.section`
     margin-bottom: 25px;
   }
 
-  @media ${theme.media.large} {
+  @media ${(props) => props.theme.media.large} {
     padding: 80px 40px 0 40px;
     gap: 20px;
   }
@@ -35,12 +33,12 @@ const Information = styled.div`
 const Name = styled.span`
   display: block;
   margin-bottom: 10px;
+  color: ${(props) => props.theme.colors.text.tertiary};
   ${font({
-    color: theme.colors.text.tertiary,
     weight: 700,
     Fmin: 40,
     Fmax: 48,
-  })}
+  })};
 `;
 
 const Title = styled.h1`
@@ -49,15 +47,15 @@ const Title = styled.h1`
     weight: 700,
     Fmin: 40,
     Fmax: 48,
-    color: theme.colors.text.tertiary,
-  })}
+  })};
+  color: ${(props) => props.theme.colors.text.tertiary};
 `;
 
 const Highlighted = styled.span`
   background-image: linear-gradient(
     to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
+    ${(props) => props.theme.colors.secondary},
+    ${(props) => props.theme.colors.accent}
   );
   -webkit-background-clip: text;
   background-clip: text;

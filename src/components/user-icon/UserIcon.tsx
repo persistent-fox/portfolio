@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
 
 interface IUserIconProps {
   srcImg: string;
@@ -18,7 +17,7 @@ export const StyledUserIcon = styled.picture`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: ${theme.colors.grey.medium};
+  background: ${(props) => props.theme.colors.grey.medium};
   &:before {
     content: "";
     position: absolute;

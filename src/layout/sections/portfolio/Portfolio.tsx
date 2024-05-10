@@ -9,9 +9,7 @@ import { TabMenu } from "../../../components/tab-menu/TabMenu";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
 
-interface IPortfolioProps {}
-
-export const Portfolio: React.FC<IPortfolioProps> = ({}: IPortfolioProps) => {
+export const Portfolio: React.FC<IPortfolioProps> = () => {
   const [filter, setFilter] = useState("all");
   const [filtredProjects, setFiltredProjects] = useState(ProjectsData);
 
@@ -39,19 +37,6 @@ export const Portfolio: React.FC<IPortfolioProps> = ({}: IPortfolioProps) => {
         filter={filter}
       />
       <FlexWrapper justify={"center"} gap={"40px"} wrap={"wrap"}>
-        {/*<AliceCarousel*/}
-        {/*  mouseTracking*/}
-        {/*  items={filtredProjects.map((item) => (*/}
-        {/*    <Project*/}
-        {/*      key={item.id}*/}
-        {/*      title={item.title}*/}
-        {/*      description={item.description}*/}
-        {/*      srcImg={srcImg}*/}
-        {/*      skills={item.skills}*/}
-        {/*    />*/}
-        {/*  ))}*/}
-        {/*/>*/}
-
         <AnimatePresence>
           {filtredProjects.map((item) => (
             <motion.div

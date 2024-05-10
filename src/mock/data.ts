@@ -103,12 +103,31 @@ export const workHistory = [
 ];
 
 export const menuItems = [
-  "home",
-  "work history",
-  "education",
-  "portfolio",
-  "blog",
-  "contacts",
+  {
+    title: "Home",
+    path: "/",
+    icon: "home",
+  },
+  {
+    title: "Work History",
+    path: "/work-history",
+    icon: "work history",
+  },
+  {
+    title: "Education",
+    path: "/education",
+    icon: "education",
+  },
+  {
+    title: "Portfolio",
+    path: "/portfolio",
+    icon: "portfolio",
+  },
+  {
+    title: "Contacts",
+    path: "/contacts",
+    icon: "contacts",
+  },
 ];
 
 export const placeOfResidence = [

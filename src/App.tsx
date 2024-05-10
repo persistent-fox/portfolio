@@ -12,25 +12,44 @@ import { MySkills } from "./layout/sections/my-skills/MySkills";
 import { Menu } from "./layout/sections/menu/Menu";
 import { menuItems } from "./mock/data";
 import { Particle } from "./components/particle/Particle";
+import { Route, Routes } from "react-router-dom";
+import { MainContent } from "./components/MainContent";
+import { useState } from "react";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import { lightTheme, darkTheme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
 
 function App() {
+  const [mode, setMode] = useState("dark");
+  const theme = mode === "light" ? lightTheme : darkTheme;
+  const toggleMode = () => {
+    setMode((m) => (m === "light" ? "dark" : "light"));
+  };
+
   return (
-    <div className="App">
-      <Particle />
-      <FlexWrapper justify={"space-between"}>
-        <Aside />
-        <Container>
-          <Main />
-          <MySkills />
-          <Education />
-          <WorkHistory />
-          <Portfolio />
-          <ContactInfo />
-          <Footer />
-        </Container>
-        <Menu menuItems={menuItems} />
-      </FlexWrapper>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <div className="App">
+        <Particle />
+        <FlexWrapper justify={"space-between"}>
+          <Aside />
+          <Container>
+            <MainContent>
+              <Main />
+              <Routes>
+                <Route path={"/"} element={<MySkills />} />
+                <Route path={"/education"} element={<Education />} />
+                <Route path={"/work-history"} element={<WorkHistory />} />
+                <Route path={"/portfolio"} element={<Portfolio />} />
+                <Route path={"/contacts"} element={<ContactInfo />} />
+              </Routes>
+              <Footer />
+            </MainContent>
+          </Container>
+          <Menu onClick={toggleMode} menuItems={menuItems} />
+        </FlexWrapper>
+      </div>
+    </ThemeProvider>
   );
 }
 

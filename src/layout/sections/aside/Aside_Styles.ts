@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { theme } from "../../../styles/theme";
 import { TitleCard } from "../../../components/TitleCard";
 
 type UserPanelProps = {
@@ -11,12 +10,12 @@ const UserPanel = styled.div<UserPanelProps>`
   flex-direction: column;
   gap: 25px;
   padding: 50px 45px 25px 40px;
-  background-color: ${theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   height: 100%;
   overflow-y: auto;
   transition: transform 0.3s;
 
-  @media ${theme.media.large} {
+  @media ${(props) => props.theme.media.large} {
     position: fixed;
     left: 0;
     transform: translateX(-100%);
@@ -28,7 +27,7 @@ const UserPanel = styled.div<UserPanelProps>`
         transform: translateX(0);
       `}
   }
-  @media ${theme.media.small} {
+  @media ${(props) => props.theme.media.small} {
     max-width: none;
     width: 100%;
   }
@@ -55,16 +54,28 @@ const Skills = styled.section`
   }
 `;
 
-// type AsideProps = {
-//   isOpen: boolean;
-// };
-
 const Aside = styled.aside`
   position: relative;
   max-width: 375px;
   width: 100%;
   flex-grow: 1;
-  @media ${theme.media.large} {
+  height: 100vh;
+  overflow-y: auto;
+
+  *::-webkit-scrollbar-track {
+    background-color: ${(props) => props.theme.colors.scroll.trackAside};
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+      to top,
+      ${(props) => props.theme.colors.scroll.trackAside},
+      ${(props) => props.theme.colors.scroll.thumbAside}
+    );
+    border-radius: 5px;
+  }
+
+  @media ${(props) => props.theme.media.large} {
     max-width: none;
     flex-grow: 0;
     width: auto;
@@ -82,11 +93,11 @@ const InfoArrow = styled.div`
   align-items: center;
   width: 35px;
   height: 35px;
-  color: ${theme.colors.tertiary};
+  color: ${(props) => props.theme.colors.tertiary};
   background-image: linear-gradient(
     to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
+    ${(props) => props.theme.colors.secondary},
+    ${(props) => props.theme.colors.accent}
   );
   cursor: pointer;
   transform: rotate(180deg);
@@ -102,16 +113,16 @@ const Close = styled.div`
   align-items: center;
   width: 35px;
   height: 35px;
-  color: ${theme.colors.tertiary};
+  color: ${(props) => props.theme.colors.tertiary};
   background-image: linear-gradient(
     to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
+    ${(props) => props.theme.colors.secondary},
+    ${(props) => props.theme.colors.accent}
   );
   cursor: pointer;
   visibility: hidden;
 
-  @media ${theme.media.small} {
+  @media ${(props) => props.theme.media.small} {
     visibility: visible;
   }
 `;

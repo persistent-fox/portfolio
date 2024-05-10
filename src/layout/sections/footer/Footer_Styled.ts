@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/theme";
 
 const Footer = styled.footer`
   position: relative;
@@ -9,11 +8,14 @@ const Footer = styled.footer`
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.text.tertiary};
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text.tertiary};
   font-kerning: none;
   font-feature-settings: "calt" off;
   text-transform: capitalize;
+  @media ${(props) => props.theme.media.large} {
+    padding-bottom: 100px;
+  }
 `;
 
 const Copyright = styled.small`
@@ -22,7 +24,7 @@ const Copyright = styled.small`
 
 const Name = styled.span`
   font-size: 24px;
-  color: ${theme.colors.text.tertiary};
+  color: ${(props) => props.theme.colors.text.tertiary};
   margin-bottom: 20px;
 `;
 

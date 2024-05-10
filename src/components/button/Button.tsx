@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon } from "../icon/Icon";
 import styled, { css } from "styled-components";
-import { theme } from "../../styles/theme";
 
 interface IButtonProps {
   primary?: boolean;
@@ -57,11 +56,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-size: 14px;
   font-weight: 600;
   padding: 10px 30px;
-  color: ${(props) => props.color || theme.colors.tertiary};
+  color: ${(props) => props.color || props.theme.colors.tertiary};
   background-image: linear-gradient(
     to right,
-    ${theme.colors.secondary},
-    ${theme.colors.accent}
+    ${(props) => props.theme.colors.secondary},
+    ${(props) => props.theme.colors.accent}
   );
   border: none;
   cursor: pointer;
@@ -73,8 +72,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background-image: linear-gradient(
       to right,
-      ${theme.colors.accent},
-      ${theme.colors.secondary}
+      ${(props) => props.theme.colors.accent},
+      ${(props) => props.theme.colors.secondary}
     );
   }
 
@@ -82,7 +81,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) =>
     props.primary &&
     css<StyledButtonProps>`
-      color: ${(props) => props.color || theme.colors.tertiary};
+      color: ${(props) => props.color || props.theme.colors.tertiary};
       font-size: ${(props) => props.fontSize || "16px"};
       font-weight: ${(props) => props.fontWeight || "500"};
       padding: 16px 32px;

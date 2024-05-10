@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/theme";
 
 const WorkHistory = styled.section`
   position: relative;
@@ -21,7 +20,7 @@ const Info = styled.div`
   gap: 30px;
   width: 100%;
   padding: 40px 20px;
-  background-color: ${theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 export const S = {

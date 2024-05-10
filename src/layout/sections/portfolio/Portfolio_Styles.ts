@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
-import { theme } from "../../../styles/theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { StyledButton } from "../../../components/button/Button";
 
@@ -9,7 +8,7 @@ import { StyledButton } from "../../../components/button/Button";
 const Project = styled.article`
   display: flex;
   flex-direction: column;
-  background-color: ${theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   border-radius: 0 60px 0 60px;
 
   img {
@@ -23,17 +22,17 @@ const Project = styled.article`
     border-radius: 4px;
     background-image: linear-gradient(
       to right,
-      ${theme.colors.secondary},
-      ${theme.colors.accent}
+      ${(props) => props.theme.colors.secondary},
+      ${(props) => props.theme.colors.accent}
     );
     padding: 4px 8px;
     font-size: 16px;
-    color: ${theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.tertiary};
     font-weight: 600;
     line-height: 1;
   }
 
-  @media ${theme.media.small} {
+  @media ${(props) => props.theme.media.small} {
     min-width: 320px;
     width: 100%;
   }
@@ -67,8 +66,9 @@ const ImageWrapper = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
     opacity: 0;
+    transition: 0.3s all;
   }
 
   &:hover {
@@ -77,7 +77,9 @@ const ImageWrapper = styled.div`
     }
 
     ${StyledButton} {
-      visibility: visible;
+      transition: 0.3s all;
+      opacity: 1;
+      transform: translate(-50%, -50%);
     }
   }
 
@@ -85,11 +87,11 @@ const ImageWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
+    transform: translate(-50%, -40%);
+    opacity: 0;
   }
 
-  @media ${theme.media.medium} {
+  @media ${(props) => props.theme.media.medium} {
     &::before {
       opacity: 1;
     }

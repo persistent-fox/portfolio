@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./theme";
 import { font } from "./Common";
+import { darkTheme, lightTheme } from "./theme";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{
+  theme: typeof lightTheme | typeof darkTheme;
+}>`
   *,
   *:after,
   *:before {
@@ -10,26 +12,19 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  
-  // * {
-  //   scrollbar-width: thin;
-  //   scrollbar-color: linear-gradient(to top,
-  //   ${theme.colors.secondary},
-  //   ${theme.colors.accent}) ${theme.colors.tertiary};
-  // }
 
   *::-webkit-scrollbar {
     width: 5px;
   }
 
   *::-webkit-scrollbar-track {
-    background-color: ${theme.colors.tertiary};
+    background-color: ${(props) => props.theme.colors.scroll.trackDefault};
   }
 
   *::-webkit-scrollbar-thumb {
     background-image: linear-gradient(to top,
-    ${theme.colors.secondary},
-    ${theme.colors.accent});
+    ${(props) => props.theme.colors.scroll.thumbDefaultSecondary},
+    ${(props) => props.theme.colors.scroll.thumbDefaultAccent});
     border-radius: 5px;
   }
 
@@ -48,18 +43,20 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     ${font({
       weight: 700,
-      color: theme.colors.text.dark,
       Fmin: 15,
       Fmax: 25,
     })}
+    color: ${(props) => props.theme.colors.text.dark},
   }
 
   body {
-    background-color: ${theme.colors.grey.medium};
+    background-color: ${(props) => props.theme.colors.grey.medium};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: none;
     font-feature-settings: "calt" off;
-    ${font({ Fmin: 15, Fmax: 20 })}
+    ${font({ Fmin: 15, Fmax: 20 })};
+    color: ${(props) => props.theme.colors.text.dark};
+  }
 `;

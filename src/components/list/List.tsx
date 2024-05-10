@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-import { theme } from "../../styles/theme";
 
 interface IListProps {
   listItems: string[];

@@ -1,6 +1,5 @@
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
 import React from "react";
 
 interface IProjectLinkProps {
@@ -29,13 +28,13 @@ export const StyledProjectLink = styled.a`
   display: flex;
   align-items: center;
   gap: 10px;
-  color: ${theme.colors.text.dark};
+  color: ${(props) => props.theme.colors.text.dark};
   text-decoration-line: underline;
   transition: all 0.3s;
 
-  @media ${theme.media.hover} {
+  @media ${(props) => props.theme.media.hover} {
     &:hover {
-      color: ${theme.colors.text.tertiary};
+      color: ${(props) => props.theme.colors.text.tertiary};
     }
   }
 `;
